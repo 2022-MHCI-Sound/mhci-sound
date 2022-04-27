@@ -9,26 +9,6 @@ import { openDatabase } from 'react-native-sqlite-storage';
 import { jsonToCSV } from 'react-native-csv';
 import Mailer from 'react-native-mail';
 
-const handleEmail = () => {
-    Mailer.mail({
-      subject: '2022 MHCI Experiment End',
-      recipients: ['joan.fu@iss.nthu.edu.tw'],
-      ccRecipients: ['shelly.chao@iss.nthu.edu.tw'],
-      body: {allScheduleData}{allConfirmData},
-      isHTML: true,
-    }, (error, event) => {
-      Alert.alert(
-        error,
-        event,
-        [
-          {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
-          {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
-        ],
-        { cancelable: true }
-      )
-    });
-  }
-
 var db = openDatabase({ name: 'SoundNotification.db'});
 
 const EndExperiment = ({ navigation }) => {
@@ -60,13 +40,34 @@ const EndExperiment = ({ navigation }) => {
             );
           });
       }, []);
-      console.log(allScheduleData);
-      console.log(allConfirmData);
+    //   console.log(allScheduleData);
+    //   console.log(allConfirmData);
       const scheduleCsv = jsonToCSV(allScheduleData)
       const confirmCsv = jsonToCSV(allConfirmData)
-      setAllScheduleData(scheduleCsv);
-      setAllConfirmData(confirmCsv);
-      console.log(csv);
+    //   setAllScheduleData(scheduleCsv);
+    //   setAllConfirmData(confirmCsv);
+    const handleEmail = () => {
+        let bodyCsv = `${confirmCsv}\n${scheduleCsv}`
+        console.log(bodyCsv);
+        Mailer.mail({
+          subject: '2022 MHCI Experiment End',
+          recipients: ['joan.fu@iss.nthu.edu.tw'],
+          ccRecipients: ['shelly.chao@iss.nthu.edu.tw'],
+          body: bodyCsv,
+          isHTML: true,
+        }, (error, event) => {
+          Alert.alert(
+            error,
+            event,
+            [
+              {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+              {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+            ],
+            { cancelable: true }
+          )
+        });
+      }
+
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
