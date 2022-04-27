@@ -2,11 +2,32 @@
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { Button, Alert, View, Text, SafeAreaView } from 'react-native';
 import Mybutton from './components/Mybutton';
 import Mytext from './components/Mytext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import { jsonToCSV } from 'react-native-csv';
+import Mailer from 'react-native-mail';
+
+const handleEmail = () => {
+    Mailer.mail({
+      subject: '2022 MHCI Experiment End',
+      recipients: ['joan.fu@iss.nthu.edu.tw'],
+      ccRecipients: ['shelly.chao@iss.nthu.edu.tw'],
+      body: {allScheduleData}{allConfirmData},
+      isHTML: true,
+    }, (error, event) => {
+      Alert.alert(
+        error,
+        event,
+        [
+          {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+          {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+        ],
+        { cancelable: true }
+      )
+    });
+  }
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
@@ -41,7 +62,10 @@ const EndExperiment = ({ navigation }) => {
       }, []);
       console.log(allScheduleData);
       console.log(allConfirmData);
-      const csv = jsonToCSV(allScheduleData)
+      const scheduleCsv = jsonToCSV(allScheduleData)
+      const confirmCsv = jsonToCSV(allConfirmData)
+      setAllScheduleData(scheduleCsv);
+      setAllConfirmData(confirmCsv);
       console.log(csv);
 
   return (
@@ -52,6 +76,10 @@ const EndExperiment = ({ navigation }) => {
           <Mybutton
             title="確定"
             customClick={() => navigation.navigate('Register')}
+          />
+          <Button 
+            onPress={handleEmail}
+            title="確定唷"
           />
           <Mybutton
             title="取消"
