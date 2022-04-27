@@ -20,8 +20,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './pages/HomeScreen';
 import RegisterSchedule from './pages/RegisterSchedule';
 import ConfirmSchedule from './pages/ConfirmSchedule';
-import ViewUser from './pages/ViewUser';
-import ViewAllUser from './pages/ViewAllUser';
+import ViewSchedule from './pages/ViewSchedule';
+import ViewAllSchedules from './pages/ViewAllSchedules';
 import DeleteUser from './pages/DeleteUser';
 
 const Stack = createStackNavigator();
@@ -46,9 +46,9 @@ const App = () => {
         />
         <Stack.Screen
           name="View"
-          component={ViewUser}
+          component={ViewSchedule}
           options={{
-            title: 'View User', //Set Header Title
+            title: 'View Schedule', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },
@@ -60,9 +60,9 @@ const App = () => {
         />
         <Stack.Screen
           name="ViewAll"
-          component={ViewAllUser}
+          component={ViewAllSchedules}
           options={{
-            title: 'View Users', //Set Header Title
+            title: 'View Schedules', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },

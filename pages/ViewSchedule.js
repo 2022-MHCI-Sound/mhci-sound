@@ -1,6 +1,6 @@
 // Example: Example of SQLite Database in React Native
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
-// Screen to view single user
+// Screen to view single schedule
 
 import React, { useState } from 'react';
 import { Text, View, SafeAreaView } from 'react-native';
@@ -8,26 +8,26 @@ import Mytextinput from './components/Mytextinput';
 import Mybutton from './components/Mybutton';
 import { openDatabase } from 'react-native-sqlite-storage';
 
-var db = openDatabase({ name: 'UserDatabase.db' });
+var db = openDatabase({ name: 'SoundNotification.db'});
 
-const ViewUser = () => {
-  let [inputUserId, setInputUserId] = useState('');
-  let [userData, setUserData] = useState({});
+const ViewSchedule = () => {
+  let [inputScheduleId, setInputScheduleId] = useState('');
+  let [scheduleData, setScheduleData] = useState({});
 
-  let searchUser = () => {
-    console.log(inputUserId);
-    setUserData({});
+  let searchSchedule = () => {
+    console.log(inputScheduleId);
+    setScheduleData({});
     db.transaction((tx) => {
       tx.executeSql(
-        'SELECT * FROM table_user where user_id = ?',
-        [inputUserId],
+        'SELECT * FROM schedules where schedule_id = ?',
+        [inputScheduleId],
         (tx, results) => {
           var len = results.rows.length;
           console.log('len', len);
           if (len > 0) {
-            setUserData(results.rows.item(0));
+            setScheduleData(results.rows.item(0));
           } else {
-            alert('No user found');
+            alert('No schedule found');
           }
         }
       );
@@ -39,23 +39,22 @@ const ViewUser = () => {
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <View style={{ flex: 1 }}>
           <Mytextinput
-            placeholder="Enter User Id"
+            placeholder="Enter Schedule Id"
             onChangeText={
-              (inputUserId) => setInputUserId(inputUserId)
+              (inputScheduleId) => setInputScheduleId(inputScheduleId)
             }
             style={{ padding: 10 }}
           />
-          <Mybutton title="Search User" customClick={searchUser} />
+          <Mybutton title="Search Schedule" customClick={searchSchedule} />
           <View
             style={{
               marginLeft: 35,
               marginRight: 35,
               marginTop: 10
             }}>
-            <Text>User Id: {userData.user_id}</Text>
-            <Text>User Name: {userData.user_name}</Text>
-            <Text>User Contact: {userData.user_contact}</Text>
-            <Text>User Address: {userData.user_address}</Text>
+            <Text>Schedule Id: {scheduleData.schedule_id}</Text>
+            <Text>Schedule Time: {scheduleData.schedule_time}</Text>
+            <Text>Schedule Description: {scheduleData.description}</Text>
           </View>
         </View>
         <Text
@@ -79,4 +78,4 @@ const ViewUser = () => {
   );
 };
 
-export default ViewUser;
+export default ViewSchedule;

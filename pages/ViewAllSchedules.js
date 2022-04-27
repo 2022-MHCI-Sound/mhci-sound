@@ -6,15 +6,15 @@ import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View, SafeAreaView } from 'react-native';
 import { openDatabase } from 'react-native-sqlite-storage';
 
-var db = openDatabase({ name: 'UserDatabase.db' });
+var db = openDatabase({ name: 'SoundNotification.db'});
 
-const ViewAllUser = () => {
+const ViewAllSchedules = () => {
   let [flatListItems, setFlatListItems] = useState([]);
 
   useEffect(() => {
     db.transaction((tx) => {
       tx.executeSql(
-        'SELECT * FROM table_user',
+        'SELECT * FROM schedules WHERE deleted != 1',
         [],
         (tx, results) => {
           var temp = [];
@@ -43,10 +43,9 @@ const ViewAllUser = () => {
       <View
         key={item.user_id}
         style={{ backgroundColor: 'white', padding: 20 }}>
-        <Text>Id: {item.user_id}</Text>
-        <Text>Name: {item.user_name}</Text>
-        <Text>Contact: {item.user_contact}</Text>
-        <Text>Address: {item.user_address}</Text>
+        <Text>Id: {item.schedule_id}</Text>
+        <Text>Time: {item.schedule_time}</Text>
+        <Text>Description: {item.description}</Text>
       </View>
     );
   };
@@ -83,4 +82,4 @@ const ViewAllUser = () => {
   );
 };
 
-export default ViewAllUser;
+export default ViewAllSchedules;
