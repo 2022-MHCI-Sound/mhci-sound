@@ -19,7 +19,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './pages/HomeScreen';
 import RegisterSchedule from './pages/RegisterSchedule';
-import UpdateUser from './pages/UpdateUser';
+import ConfirmSchedule from './pages/ConfirmSchedule';
 import ViewUser from './pages/ViewUser';
 import ViewAllUser from './pages/ViewAllUser';
 import DeleteUser from './pages/DeleteUser';
@@ -73,10 +73,10 @@ const App = () => {
           }}
         />
         <Stack.Screen
-          name="Update"
-          component={UpdateUser}
+          name="Confirm"
+          component={ConfirmSchedule}
           options={{
-            title: 'Update User', //Set Header Title
+            title: 'Confirm Schedule', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },

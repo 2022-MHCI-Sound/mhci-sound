@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
           if (res.rows.length == 0) {
             txn.executeSql('DROP TABLE IF EXISTS schedules', []);
             txn.executeSql(
-              'CREATE TABLE IF NOT EXISTS schedules(schedule_id INTEGER PRIMARY KEY AUTOINCREMENT, schedule_time DATETIME, description TEXT, confirmed INTEGER DEFAULT 0 NOT NULL, deleted INTEGER DEFAULT 0 NOT NULL, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP )',
+              'CREATE TABLE IF NOT EXISTS schedules(schedule_id INTEGER PRIMARY KEY AUTOINCREMENT, schedule_time DATETIME, description TEXT, confirmed INTEGER DEFAULT 0 NOT NULL, deleted INTEGER DEFAULT 0 NOT NULL, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, UNIQUE(schedule_time, description) )',
               []
             );
           }
@@ -39,8 +39,8 @@ const HomeScreen = ({ navigation }) => {
             customClick={() => navigation.navigate('Register')}
           />
           <Mybutton
-            title="Update"
-            customClick={() => navigation.navigate('Update')}
+            title="Confirm"
+            customClick={() => navigation.navigate('Confirm')}
           />
           <Mybutton
             title="View"
