@@ -23,6 +23,7 @@ import ConfirmSchedule from './pages/ConfirmSchedule';
 import ViewSchedule from './pages/ViewSchedule';
 import ViewAllSchedules from './pages/ViewAllSchedules';
 import DeleteSchedule from './pages/DeleteSchedule';
+import EndExperiment from './pages/EndExperiment'
 
 const Stack = createStackNavigator();
 
@@ -105,6 +106,20 @@ const App = () => {
           component={DeleteSchedule}
           options={{
             title: 'Delete Schedule', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
+        <Stack.Screen
+          name="End"
+          component={EndExperiment}
+          options={{
+            title: 'End Experiment', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },
