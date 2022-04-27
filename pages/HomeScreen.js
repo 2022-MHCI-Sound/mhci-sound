@@ -69,6 +69,12 @@ const HomeScreen = ({ navigation }) => {
             customClick={() => navigation.navigate('Delete')}
           />
         </View>
+        <View style={{ flex: 0.15 }}>
+          <Mybutton
+              title="結束實驗"
+              customClick={() => navigation.navigate('End')}
+          />
+        </View>
         <Text
           style={{
             fontSize: 18,
