@@ -18,7 +18,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './pages/HomeScreen';
-import RegisterUser from './pages/RegisterUser';
+import RegisterSchedule from './pages/RegisterSchedule';
 import UpdateUser from './pages/UpdateUser';
 import ViewUser from './pages/ViewUser';
 import ViewAllUser from './pages/ViewAllUser';
@@ -88,9 +88,9 @@ const App = () => {
         />
         <Stack.Screen
           name="Register"
-          component={RegisterUser}
+          component={RegisterSchedule}
           options={{
-            title: 'Register User', //Set Header Title
+            title: 'Register Schedule', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },

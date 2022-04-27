@@ -4,6 +4,7 @@
 
 import React, { useState } from 'react';
 import {
+  Button,
   View,
   ScrollView,
   KeyboardAvoidingView,
@@ -14,34 +15,32 @@ import {
 import Mytextinput from './components/Mytextinput';
 import Mybutton from './components/Mybutton';
 import { openDatabase } from 'react-native-sqlite-storage';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
-var db = openDatabase({ name: 'UserDatabase.db' });
 
-const RegisterUser = ({ navigation }) => {
-  let [userName, setUserName] = useState('');
-  let [userContact, setUserContact] = useState('');
-  let [userAddress, setUserAddress] = useState('');
+var db = openDatabase({ name: 'SoundNotification.db'});
 
-  let register_user = () => {
-    console.log(userName, userContact, userAddress);
+const RegisterSchedule = ({ navigation }) => {
+  const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
+  let [scheduleTime, setScheduleTime] = useState('');
+  let [scheduleDescription, setScheduleDescription] = useState('');
 
-    if (!userName) {
-      alert('Please fill name');
+  let register_schedule = () => {
+    console.log(scheduleTime,  scheduleDescription);
+
+    if (!scheduleTime) {
+      alert('Please fill Schedule Time');
       return;
     }
-    if (!userContact) {
-      alert('Please fill Contact Number');
-      return;
-    }
-    if (!userAddress) {
-      alert('Please fill Address');
+    if (!scheduleDescription) {
+      alert('Please fill Description of the schedule');
       return;
     }
 
     db.transaction(function (tx) {
       tx.executeSql(
-        'INSERT INTO table_user (user_name, user_contact, user_address) VALUES (?,?,?)',
-        [userName, userContact, userAddress],
+        'INSERT INTO schedules (schedule_time, description) VALUES (?,?)',
+        [scheduleTime, scheduleDescription],
         (tx, results) => {
           console.log('Results', results.rowsAffected);
           if (results.rowsAffected > 0) {
@@ -62,6 +61,24 @@ const RegisterUser = ({ navigation }) => {
     });
   };
 
+  const showTimePicker = () => {
+    setTimePickerVisibility(true);
+  };
+
+  const hideTimePicker = () => {
+    setTimePickerVisibility(false);
+  };
+
+  const handleConfirm = (scheduleTime) => {
+    // use this format temporary (might need to change to cope with push notification mechanism)
+    let hours = scheduleTime.getHours();
+    let minutes = scheduleTime.getMinutes();
+    let seconds = scheduleTime.getSeconds();
+    let rawTime = `${hours}:${minutes}:${seconds}`;
+    setScheduleTime(rawTime);
+    hideTimePicker();
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
@@ -70,33 +87,25 @@ const RegisterUser = ({ navigation }) => {
             <KeyboardAvoidingView
               behavior="padding"
               style={{ flex: 1, justifyContent: 'space-between' }}>
-              <Mytextinput
-                placeholder="Enter Name"
-                onChangeText={
-                  (userName) => setUserName(userName)
-                }
+              <Button 
+                onPress={showTimePicker}
+                title="Set Schedule Time"
+              />
+              <DateTimePickerModal
+                isVisible={isTimePickerVisible}
+                mode="time"
+                onConfirm={handleConfirm}
+                onCancel={hideTimePicker}
                 style={{ padding: 10 }}
               />
               <Mytextinput
-                placeholder="Enter Contact No"
+                placeholder="Enter Schedule Description"
                 onChangeText={
-                  (userContact) => setUserContact(userContact)
+                  (scheduleDescription) => setScheduleDescription(scheduleDescription)
                 }
-                maxLength={10}
-                keyboardType="numeric"
                 style={{ padding: 10 }}
               />
-              <Mytextinput
-                placeholder="Enter Address"
-                onChangeText={
-                  (userAddress) => setUserAddress(userAddress)
-                }
-                maxLength={225}
-                numberOfLines={5}
-                multiline={true}
-                style={{ textAlignVertical: 'top', padding: 10 }}
-              />
-              <Mybutton title="Submit" customClick={register_user} />
+              <Mybutton title="Submit" customClick={register_schedule} />
             </KeyboardAvoidingView>
           </ScrollView>
         </View>
@@ -106,7 +115,7 @@ const RegisterUser = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          Example of SQLite Database in React Native
+          2022 MHCI 
         </Text>
         <Text
           style={{
@@ -121,4 +130,4 @@ const RegisterUser = ({ navigation }) => {
   );
 };
 
-export default RegisterUser;
+export default RegisterSchedule;
