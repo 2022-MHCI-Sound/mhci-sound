@@ -63,7 +63,7 @@ const ViewSchedule = () => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          Example of SQLite Database in React Native
+          2022 MHCI
         </Text>
         <Text
           style={{

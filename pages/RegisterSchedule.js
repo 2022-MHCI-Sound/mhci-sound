@@ -29,11 +29,11 @@ const RegisterSchedule = ({ navigation }) => {
     console.log(scheduleTime,  scheduleDescription);
 
     if (!scheduleTime) {
-      alert('Please fill Schedule Time');
+      alert('請輸入提醒時間！');
       return;
     }
     if (!scheduleDescription) {
-      alert('Please fill Description of the schedule');
+      alert('請輸入提醒項目的簡易描述！');
       return;
     }
 
@@ -43,6 +43,7 @@ const RegisterSchedule = ({ navigation }) => {
         [scheduleTime, scheduleDescription],
         (tx, results) => {
           console.log('Results', results.rowsAffected);
+          console.log()
           if (results.rowsAffected > 0) {
             Alert.alert(
               'Success',
@@ -55,7 +56,7 @@ const RegisterSchedule = ({ navigation }) => {
               ],
               { cancelable: false }
             );
-          } else alert('Registration Failed');
+          } else alert('新增失敗');
         }
       );
     });
@@ -89,7 +90,7 @@ const RegisterSchedule = ({ navigation }) => {
               style={{ flex: 1, justifyContent: 'space-between' }}>
               <Button 
                 onPress={showTimePicker}
-                title="Set Schedule Time"
+                title="選擇時間"
               />
               <DateTimePickerModal
                 isVisible={isTimePickerVisible}
@@ -99,13 +100,13 @@ const RegisterSchedule = ({ navigation }) => {
                 style={{ padding: 10 }}
               />
               <Mytextinput
-                placeholder="Enter Schedule Description"
+                placeholder="請輸入此提醒項目的簡單描述 e.g., 吃益生菌"
                 onChangeText={
                   (scheduleDescription) => setScheduleDescription(scheduleDescription)
                 }
                 style={{ padding: 10 }}
               />
-              <Mybutton title="Submit" customClick={register_schedule} />
+              <Mybutton title="新增" customClick={register_schedule} />
             </KeyboardAvoidingView>
           </ScrollView>
         </View>

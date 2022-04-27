@@ -26,6 +26,20 @@ const HomeScreen = ({ navigation }) => {
           }
         }
       );
+      txn.executeSql(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='confirms'",
+        [],
+        function (tx, res) {
+          console.log('confirm_item:', res.rows.length);
+          if (res.rows.length == 0) {
+            txn.executeSql('DROP TABLE IF EXISTS confirms', []);
+            txn.executeSql(
+              'CREATE TABLE IF NOT EXISTS confirms(confirm_id INTEGER PRIMARY KEY AUTOINCREMENT,schedule_id INTEGER UNSIGNED NOT NULL, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (schedule_id) REFERENCES schedules (schedule_id) )',
+              []
+            );
+          }
+        }
+      );
     });
   }, []);
 
@@ -35,23 +49,23 @@ const HomeScreen = ({ navigation }) => {
         <View style={{ flex: 1 }}>
           <Mytext text="SQLite Example" />
           <Mybutton
-            title="Register"
+            title="新增提醒項目"
             customClick={() => navigation.navigate('Register')}
           />
           <Mybutton
-            title="Confirm"
+            title="已於30分鐘內吃藥"
             customClick={() => navigation.navigate('Confirm')}
           />
           <Mybutton
-            title="View"
+            title="搜尋"
             customClick={() => navigation.navigate('View')}
           />
           <Mybutton
-            title="View All"
+            title="檢視所有提醒項目"
             customClick={() => navigation.navigate('ViewAll')}
           />
           <Mybutton
-            title="Delete"
+            title="刪除提醒項目"
             customClick={() => navigation.navigate('Delete')}
           />
         </View>
@@ -61,7 +75,7 @@ const HomeScreen = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          Example of SQLite Database in React Native
+          2022 MHCI
         </Text>
         <Text
           style={{
