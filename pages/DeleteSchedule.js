@@ -21,10 +21,10 @@ const ConfirmSchedule = ({ navigation }) => {
   let [inputScheduleId, setInputScheduleId] = useState('');
   let [scheduleData, setScheduleData] = useState({});
 
-  let updateAllStates = (time, description, confirmed) => {
+  let updateAllStates = (time, description, deleted) => {
     setScheduleTime(time);
     setScheduleDescription(description);
-    setConfirmed(confirmed);
+    setDeleted(deleted);
   };
 
   let searchSchedule = () => {
@@ -43,7 +43,7 @@ const ConfirmSchedule = ({ navigation }) => {
             updateAllStates(
               res.schedule_time,
               res.description,
-              res.confirmed
+              res.deleted
             );
           } else {
             alert('No schedule found');
@@ -53,10 +53,11 @@ const ConfirmSchedule = ({ navigation }) => {
       );
     });
   };
-  let confirmSchedule = () => {
-    console.log(inputScheduleId, scheduleData.schedule_time, scheduleData.description, scheduleData.confirmed);
+  let deleteSchedule = () => {
+    console.log(inputScheduleId, scheduleData.schedule_time, scheduleData.description, scheduleData.deleted);
 
-    let new_confirmed = scheduleData.confirmed + 1;
+    // set soft deleted as 1
+    let soft_deleted = 1;
 
     if (!inputScheduleId) {
       alert('Please fill Schedule id');
@@ -65,14 +66,14 @@ const ConfirmSchedule = ({ navigation }) => {
 
     db.transaction((tx) => {
       tx.executeSql(
-        'UPDATE schedules set schedule_time=?, description=? , confirmed=? where schedule_id=?',
-        [scheduleData.schedule_time, scheduleData.description, new_confirmed, inputScheduleId],
+        'UPDATE schedules set schedule_time=?, description=? , deleted=? where schedule_id=?',
+        [scheduleData.schedule_time, scheduleData.description, soft_deleted, inputScheduleId],
         (tx, results) => {
           console.log('Results', results.rowsAffected);
           if (results.rowsAffected > 0) {
             Alert.alert(
               'Success',
-              'Schedule confirmed successfully',
+              'Schedule deleted successfully',
               [
                 {
                   text: 'Ok',
@@ -81,7 +82,7 @@ const ConfirmSchedule = ({ navigation }) => {
               ],
               { cancelable: false }
             );
-          } else alert('Confirmation Failed');
+          } else alert('Deletion Failed');
         }
       );
     });
@@ -115,11 +116,10 @@ const ConfirmSchedule = ({ navigation }) => {
                 <Text>Schedule Id: {scheduleData.schedule_id}</Text>
                 <Text>Schedule Time: {scheduleData.schedule_time}</Text>
                 <Text>Schedule Description: {scheduleData.description}</Text>
-                <Text>Confirmation: {scheduleData.confirmed}</Text>
               </View>
               <Mybutton
-                title="Confirm Schedule"
-                customClick={confirmSchedule}
+                title="Delete Schedule"
+                customClick={deleteSchedule}
               />
             </KeyboardAvoidingView>
           </ScrollView>

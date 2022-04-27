@@ -22,7 +22,7 @@ import RegisterSchedule from './pages/RegisterSchedule';
 import ConfirmSchedule from './pages/ConfirmSchedule';
 import ViewSchedule from './pages/ViewSchedule';
 import ViewAllSchedules from './pages/ViewAllSchedules';
-import DeleteUser from './pages/DeleteUser';
+import DeleteSchedule from './pages/DeleteSchedule';
 
 const Stack = createStackNavigator();
 
@@ -102,9 +102,9 @@ const App = () => {
         />
         <Stack.Screen
           name="Delete"
-          component={DeleteUser}
+          component={DeleteSchedule}
           options={{
-            title: 'Delete User', //Set Header Title
+            title: 'Delete Schedule', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },

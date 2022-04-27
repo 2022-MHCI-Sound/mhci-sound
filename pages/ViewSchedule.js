@@ -19,7 +19,7 @@ const ViewSchedule = () => {
     setScheduleData({});
     db.transaction((tx) => {
       tx.executeSql(
-        'SELECT * FROM schedules where schedule_id = ?',
+        'SELECT * FROM schedules where schedule_id = ? and deleted != 1',
         [inputScheduleId],
         (tx, results) => {
           var len = results.rows.length;
