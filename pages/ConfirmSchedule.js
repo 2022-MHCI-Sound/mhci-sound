@@ -84,6 +84,10 @@ const ConfirmSchedule = ({ navigation }) => {
           } else alert('Confirmation Failed');
         }
       );
+      tx.executeSql(
+        'INSERT INTO confirms (schedule_id) VALUES (?)',
+        [inputScheduleId]
+      );
     });
   };
 
@@ -130,7 +134,7 @@ const ConfirmSchedule = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          Example of SQLite Database in React Native
+          2022 MHCI
         </Text>
         <Text
           style={{

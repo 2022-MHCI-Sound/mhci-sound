@@ -72,8 +72,8 @@ const ConfirmSchedule = ({ navigation }) => {
           console.log('Results', results.rowsAffected);
           if (results.rowsAffected > 0) {
             Alert.alert(
-              'Success',
-              'Schedule deleted successfully',
+              'Success!',
+              '成功刪除!',
               [
                 {
                   text: 'Ok',
@@ -130,7 +130,7 @@ const ConfirmSchedule = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          Example of SQLite Database in React Native
+          2022 MHCI
         </Text>
         <Text
           style={{

@@ -3,8 +3,10 @@
 // Screen to view all the user*/
 
 import React, { useState, useEffect } from 'react';
-import { FlatList, Text, View, SafeAreaView } from 'react-native';
+import { FlatList, Text, View, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import { openDatabase } from 'react-native-sqlite-storage';
+import Mybutton from './components/Mybutton';
+
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
@@ -46,6 +48,16 @@ const ViewAllSchedules = () => {
         <Text>Id: {item.schedule_id}</Text>
         <Text>Time: {item.schedule_time}</Text>
         <Text>Description: {item.description}</Text>
+        <View style={styles.fixToText}>
+          <Mybutton
+            title="Confirm"
+            customClick={() => Alert.alert('Left button pressed')}
+          />
+          <Mybutton
+            title="Delete"
+            customClick={() => Alert.alert('Right button pressed')}
+          />
+        </View>
       </View>
     );
   };
@@ -67,7 +79,7 @@ const ViewAllSchedules = () => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          Example of SQLite Database in React Native
+          2022 MHCI
         </Text>
         <Text
           style={{
@@ -81,5 +93,11 @@ const ViewAllSchedules = () => {
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
+});
 
 export default ViewAllSchedules;
