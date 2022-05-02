@@ -19,9 +19,7 @@ target 'MHCISound' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  pod 'react-native-date-picker', :path => '../node_modules/react-native-date-picker'
 
-  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
 
   target 'MHCISoundTests' do
     inherit! :complete
