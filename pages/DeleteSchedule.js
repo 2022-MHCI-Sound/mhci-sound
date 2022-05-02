@@ -14,6 +14,7 @@ import {
 import Mytextinput from './components/Mytextinput';
 import Mybutton from './components/Mybutton';
 import { openDatabase } from 'react-native-sqlite-storage';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
@@ -63,6 +64,7 @@ const ConfirmSchedule = ({ navigation }) => {
       alert('Please fill Schedule id');
       return;
     }
+    PushNotificationIOS.removePendingNotificationRequests([inputScheduleId]);
 
     db.transaction((tx) => {
       tx.executeSql(

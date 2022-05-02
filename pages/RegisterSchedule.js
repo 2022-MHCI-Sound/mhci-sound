@@ -16,12 +16,14 @@ import Mytextinput from './components/Mytextinput';
 import Mybutton from './components/Mybutton';
 import { openDatabase } from 'react-native-sqlite-storage';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
 const RegisterSchedule = ({ navigation }) => {
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
+  let [PushTime, setPushTime] = useState('');
   let [scheduleTime, setScheduleTime] = useState('');
   let [scheduleDescription, setScheduleDescription] = useState('');
 
@@ -42,9 +44,8 @@ const RegisterSchedule = ({ navigation }) => {
         'INSERT INTO schedules (schedule_time, description) VALUES (?,?)',
         [scheduleTime, scheduleDescription],
         (tx, results) => {
-          console.log('Results', results.rowsAffected);
-          console.log()
           if (results.rowsAffected > 0) {
+            addNotification(results.insertId);
             Alert.alert(
               'Success',
               'You are Registered Successfully',
@@ -59,6 +60,23 @@ const RegisterSchedule = ({ navigation }) => {
           } else alert('新增失敗');
         }
       );
+    });
+  };
+
+  const addNotification = (id) => {
+    PushNotificationIOS.addNotificationRequest({
+      id: id.toString(),
+      title: scheduleDescription,
+      body: '點擊以關閉通知',
+      category: 'pill',
+      threadId: id.toString(),
+      fireDate: PushTime,
+      repeats: true,
+      sound: 'default',
+      repeatsComponent: {
+        hour: true,
+        minute: true,
+      },
     });
   };
 
@@ -77,6 +95,11 @@ const RegisterSchedule = ({ navigation }) => {
     let seconds = scheduleTime.getSeconds();
     let rawTime = `${hours}:${minutes}:${seconds}`;
     setScheduleTime(rawTime);
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    date.setHours(hours);
+    date.setMinutes(minutes);
+    setPushTime(date);
     hideTimePicker();
   };
 

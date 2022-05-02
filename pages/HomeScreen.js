@@ -6,10 +6,15 @@ import { View, Text, SafeAreaView } from 'react-native';
 import Mybutton from './components/Mybutton';
 import Mytext from './components/Mytext';
 import { openDatabase } from 'react-native-sqlite-storage';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
 const HomeScreen = ({ navigation }) => {
+
+  PushNotificationIOS.getPendingNotificationRequests((requests) => {
+     console.log('PendingNotificationRequest:',JSON.stringify(requests));
+  });
   useEffect(() => {
     db.transaction(function (txn) {
       txn.executeSql(
