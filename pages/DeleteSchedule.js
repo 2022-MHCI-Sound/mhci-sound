@@ -60,8 +60,8 @@ const ConfirmSchedule = ({ navigation }) => {
     // set soft deleted as 1
     let soft_deleted = 1;
 
-    if (!inputScheduleId) {
-      alert('Please fill Schedule id');
+    if (!inputScheduleId || Object.keys(scheduleData).length === 0) {
+      alert('請輸入提醒項目id並搜尋成功');
       return;
     }
     PushNotificationIOS.removePendingNotificationRequests([inputScheduleId]);
@@ -74,8 +74,7 @@ const ConfirmSchedule = ({ navigation }) => {
           console.log('Results', results.rowsAffected);
           if (results.rowsAffected > 0) {
             Alert.alert(
-              'Success!',
-              '成功刪除!',
+              '成功刪除',
               [
                 {
                   text: 'Ok',
@@ -84,7 +83,7 @@ const ConfirmSchedule = ({ navigation }) => {
               ],
               { cancelable: false }
             );
-          } else alert('Deletion Failed');
+          } else alert('刪除失敗');
         }
       );
     });
@@ -106,7 +105,7 @@ const ConfirmSchedule = ({ navigation }) => {
                 }
               />
               <Mybutton
-                title="Search Schedule"
+                title="搜尋提醒項目"
                 customClick={searchSchedule} 
               />
               <View
@@ -120,7 +119,7 @@ const ConfirmSchedule = ({ navigation }) => {
                 <Text>Schedule Description: {scheduleData.description}</Text>
               </View>
               <Mybutton
-                title="Delete Schedule"
+                title="刪除提醒項目"
                 customClick={deleteSchedule}
               />
             </KeyboardAvoidingView>
@@ -132,7 +131,7 @@ const ConfirmSchedule = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          2022 MHCI
+          2022 DingDongEat
         </Text>
         <Text
           style={{

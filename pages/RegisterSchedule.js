@@ -67,7 +67,7 @@ const RegisterSchedule = ({ navigation }) => {
     PushNotificationIOS.addNotificationRequest({
       id: id.toString(),
       title: scheduleDescription,
-      body: '點擊以關閉通知',
+      body: '吃完藥記得要去app裡按確認30分鐘內吃藥唷~',
       category: 'pill',
       threadId: id.toString(),
       fireDate: PushTime,
@@ -113,7 +113,7 @@ const RegisterSchedule = ({ navigation }) => {
               style={{ flex: 1, justifyContent: 'space-between' }}>
               <Button 
                 onPress={showTimePicker}
-                title="選擇時間"
+                title="點擊以選擇時間"
               />
               <DateTimePickerModal
                 isVisible={isTimePickerVisible}

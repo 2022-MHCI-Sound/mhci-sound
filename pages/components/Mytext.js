@@ -11,11 +11,13 @@ const Mytext = (props) => {
 
 const styles = StyleSheet.create({
   text: {
+    textAlign: 'center',
     color: '#111825',
     fontSize: 18,
     marginTop: 16,
     marginLeft: 35,
     marginRight: 35,
+    padding: 10,
   },
 });
 

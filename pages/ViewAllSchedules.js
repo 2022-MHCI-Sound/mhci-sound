@@ -46,15 +46,15 @@ const ViewAllSchedules = () => {
         key={item.user_id}
         style={{ backgroundColor: 'white', padding: 20 }}>
         <Text>Id: {item.schedule_id}</Text>
-        <Text>Time: {item.schedule_time}</Text>
-        <Text>Description: {item.description}</Text>
+        <Text>提醒時間: {item.schedule_time}</Text>
+        <Text>描述: {item.description}</Text>
         <View style={styles.fixToText}>
           <Mybutton
-            title="Confirm"
+            title="確定"
             customClick={() => Alert.alert('Left button pressed')}
           />
           <Mybutton
-            title="Delete"
+            title="刪除"
             customClick={() => Alert.alert('Right button pressed')}
           />
         </View>

@@ -59,7 +59,7 @@ const ConfirmSchedule = ({ navigation }) => {
     let new_confirmed = scheduleData.confirmed + 1;
 
     if (!inputScheduleId) {
-      alert('Please fill Schedule id');
+      alert('請輸入提醒項目id');
       return;
     }
 
@@ -81,7 +81,7 @@ const ConfirmSchedule = ({ navigation }) => {
               ],
               { cancelable: false }
             );
-          } else alert('Confirmation Failed');
+          } else alert('確認失敗');
         }
       );
       tx.executeSql(
@@ -100,14 +100,14 @@ const ConfirmSchedule = ({ navigation }) => {
               behavior="padding"
               style={{ flex: 1, justifyContent: 'space-between' }}>
               <Mytextinput
-                placeholder="Enter Schedule Id"
+                placeholder="輸入提醒項目ID"
                 style={{ padding: 10 }}
                 onChangeText={
                   (inputScheduleId) => setInputScheduleId(inputScheduleId)
                 }
               />
               <Mybutton
-                title="Search Schedule"
+                title="搜尋提醒項目"
                 customClick={searchSchedule} 
               />
               <View
@@ -122,7 +122,7 @@ const ConfirmSchedule = ({ navigation }) => {
                 <Text>Confirmation: {scheduleData.confirmed}</Text>
               </View>
               <Mybutton
-                title="Confirm Schedule"
+                title="確認已吃藥"
                 customClick={confirmSchedule}
               />
             </KeyboardAvoidingView>

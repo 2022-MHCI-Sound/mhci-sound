@@ -74,17 +74,13 @@ const EndExperiment = ({ navigation }) => {
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <View style={{ flex: 1 }}>
           <Mytext text="確定要結束實驗嗎？" />
-          <Mybutton
-            title="確定"
-            customClick={() => navigation.navigate('Register')}
-          />
           <Button 
             onPress={handleEmail}
             title="確定唷"
           />
-          <Mybutton
+          <Button
             title="取消"
-            customClick={() => navigation.navigate('HomeScreen')}
+            onPress={() => navigation.navigate('HomeScreen')}
           />
         </View>
         <Text

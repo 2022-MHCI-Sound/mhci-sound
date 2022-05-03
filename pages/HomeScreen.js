@@ -4,7 +4,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import Mybutton from './components/Mybutton';
-import Mytext from './components/Mytext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
@@ -52,7 +51,6 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <View style={{ flex: 1 }}>
-          <Mytext text="SQLite Example" />
           <Mybutton
             title="新增提醒項目"
             customClick={() => navigation.navigate('Register')}
@@ -86,7 +84,7 @@ const HomeScreen = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          2022 MHCI
+          2022 DingDongEat
         </Text>
         <Text
           style={{
