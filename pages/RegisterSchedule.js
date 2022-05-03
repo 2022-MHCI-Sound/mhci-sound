@@ -72,7 +72,7 @@ const RegisterSchedule = ({ navigation }) => {
       threadId: id.toString(),
       fireDate: PushTime,
       repeats: true,
-      sound: 'default',
+      sound: 'demo1.mp3',
       repeatsComponent: {
         hour: true,
         minute: true,
@@ -95,12 +95,8 @@ const RegisterSchedule = ({ navigation }) => {
     let seconds = scheduleTime.getSeconds();
     let rawTime = `${hours}:${minutes}:${seconds}`;
     setScheduleTime(rawTime);
-    const date = new Date();
-    date.setDate(date.getDate() + 1);
-    date.setHours(hours);
-    date.setMinutes(minutes);
-    setPushTime(date);
-    hideTimePicker();
+		setPushTime(scheduleTime);
+		hideTimePicker();
   };
 
   return (
