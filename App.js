@@ -24,6 +24,7 @@ import ViewSchedule from './pages/ViewSchedule';
 import ViewAllSchedules from './pages/ViewAllSchedules';
 import DeleteSchedule from './pages/DeleteSchedule';
 import EndExperiment from './pages/EndExperiment'
+import StartExperiment from './pages/StartExperiment'
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,20 @@ const App = () => {
           component={HomeScreen}
           options={{
             title: 'Home', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Start"
+          component={StartExperiment}
+          options={{
+            title: 'Start Experiment', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },

@@ -2,7 +2,7 @@
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
 // Screen to register the user
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Button,
   View,
@@ -26,9 +26,10 @@ const RegisterSchedule = ({ navigation }) => {
   let [PushTime, setPushTime] = useState('');
   let [scheduleTime, setScheduleTime] = useState('');
   let [scheduleDescription, setScheduleDescription] = useState('');
+  let [soundName, setSoundName] = useState('');
 
   let register_schedule = () => {
-    console.log(scheduleTime,  scheduleDescription);
+    console.log(scheduleTime,  scheduleDescription, soundName);
 
     if (!scheduleTime) {
       alert('請輸入提醒時間！');
@@ -40,12 +41,13 @@ const RegisterSchedule = ({ navigation }) => {
     }
 
     db.transaction(function (tx) {
+
       tx.executeSql(
         'INSERT INTO schedules (schedule_time, description) VALUES (?,?)',
         [scheduleTime, scheduleDescription],
         (tx, results) => {
           if (results.rowsAffected > 0) {
-            addNotification(results.insertId);
+            addNotification(results.insertId, soundName.sound_name);
             Alert.alert(
               'Success',
               'You are Registered Successfully',
@@ -63,7 +65,8 @@ const RegisterSchedule = ({ navigation }) => {
     });
   };
 
-  const addNotification = (id) => {
+  const addNotification = (id, sound_name) => {
+		console.log(sound_name);
     PushNotificationIOS.addNotificationRequest({
       id: id.toString(),
       title: scheduleDescription,
@@ -72,7 +75,7 @@ const RegisterSchedule = ({ navigation }) => {
       threadId: id.toString(),
       fireDate: PushTime,
       repeats: true,
-      sound: 'demo1.mp3',
+      sound: sound_name,
       repeatsComponent: {
         hour: true,
         minute: true,
@@ -81,7 +84,7 @@ const RegisterSchedule = ({ navigation }) => {
   };
 
   const showTimePicker = () => {
-    setTimePickerVisibility(true);
+		setTimePickerVisibility(true);
   };
 
   const hideTimePicker = () => {
@@ -89,6 +92,23 @@ const RegisterSchedule = ({ navigation }) => {
   };
 
   const handleConfirm = (scheduleTime) => {
+		// hide sound in here
+	  db.transaction(function (tx) {
+			tx.executeSql(
+				'SELECT * FROM sounds where picked = 1',
+				[],
+				(tx, results) => {
+					var len = results.rows.length;
+					console.log('len', len);
+					if (len > 0) {
+						setSoundName(results.rows.item(0));
+					} else {
+						setSoundName('default');
+					}
+				}
+			);
+		});
+		console.log(soundName);
     // use this format temporary (might need to change to cope with push notification mechanism)
     let hours = scheduleTime.getHours();
     let minutes = scheduleTime.getMinutes();
@@ -98,6 +118,8 @@ const RegisterSchedule = ({ navigation }) => {
 		setPushTime(scheduleTime);
 		hideTimePicker();
   };
+
+
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
