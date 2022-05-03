@@ -95,7 +95,7 @@ const RegisterSchedule = ({ navigation }) => {
 		// hide sound in here
 	  db.transaction(function (tx) {
 			tx.executeSql(
-				'SELECT * FROM sounds where picked = 1',
+				'SELECT * FROM sounds where picked = 1 order by updated_time desc',
 				[],
 				(tx, results) => {
 					var len = results.rows.length;

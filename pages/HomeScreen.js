@@ -52,7 +52,7 @@ const HomeScreen = ({ navigation }) => {
           if (res.rows.length == 0) {
             txn.executeSql('DROP TABLE IF EXISTS sounds', []);
             txn.executeSql(
-              'CREATE TABLE IF NOT EXISTS sounds(sound_id INTEGER PRIMARY KEY AUTOINCREMENT,sound_pswd TEXT, sound_name TEXT, picked INTEGER DEFAULT 0 NOT NULL)',
+              'CREATE TABLE IF NOT EXISTS sounds(sound_id INTEGER PRIMARY KEY AUTOINCREMENT,sound_pswd TEXT, sound_name TEXT, picked INTEGER DEFAULT 0 NOT NULL, updated_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)',
               []
             );
 						// insert pswd for each sound song

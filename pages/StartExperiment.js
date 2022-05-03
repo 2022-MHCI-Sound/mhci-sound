@@ -22,12 +22,13 @@ const StartExperiment = ({ navigation }) => {
 
     db.transaction((tx) => {
       tx.executeSql(
-        'UPDATE sounds set picked=? where sound_pswd=?',
+        'UPDATE sounds set picked=?, updated_time=CURRENT_TIMESTAMP where sound_pswd=?',
         [1, startPassword],
         (tx, results) => {
           console.log('Results', results.rowsAffected);
           if (results.rowsAffected > 0) {
             Alert.alert(
+              'Success',
               '成功輸入實驗起始密碼',
               [
                 {
