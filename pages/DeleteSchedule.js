@@ -12,6 +12,9 @@ import {
   Text,
 } from 'react-native';
 import Mybutton from './components/Mybutton';
+import Mytext from './components/Mytext';
+import Tabletext from './components/Tabletext';
+import Icon from './components/Icon';
 import { openDatabase } from 'react-native-sqlite-storage';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
@@ -58,28 +61,32 @@ const DeleteSchedule = ({ route, navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1 }}>
-          <ScrollView keyboardShouldPersistTaps="handled">
+				<View style={{ flex: 1, justifyContent: 'center' }}>
+					{/*<ScrollView keyboardShouldPersistTaps="handled">
             <KeyboardAvoidingView
               behavior="padding"
-              style={{ flex: 1, justifyContent: 'space-between' }}>
+              style={{ flex: 1, justifyContent: 'space-between' }}>*/}
               <View
                 style={{
                 marginLeft: 35,
                 marginRight: 35,
                 marginTop: 10
                 }}>
-                <Text style={{ color:'#f05555' }}>您剛剛選擇要刪除的項目為</Text>
-                <Text>項目ID: {item['schedule_id']}</Text>
-                <Text>提醒時間: {item['schedule_time']}</Text>
-                <Text>提醒項目描述: {item['description']}</Text>
+								<Text style={{padding: 10, textAlign: 'center',color:'#f05555', fontSize: 24, fontWeight: 'bold'}}>您剛剛選擇要刪除的項目為</Text>
+								<Icon
+									imageSource={require('../assets/trash.png')}
+								/>
+                <Mytext text="您剛剛選擇的項目為"/>
+                <Tabletext text="項目ID: " subText={item['schedule_id']}/>
+                <Tabletext text="提醒時間: " subText={item['schedule_time']}/>
+                <Tabletext text="提醒項目描述: " subText={item['description']}/>
               </View>
               <Mybutton
                 title="刪除提醒項目"
                 customClick={deleteSchedule}
               />
-            </KeyboardAvoidingView>
-          </ScrollView>
+					{/*</KeyboardAvoidingView>
+          </ScrollView>*/}
         </View>
         <Text
           style={{

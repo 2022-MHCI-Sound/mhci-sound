@@ -5,7 +5,8 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import { openDatabase } from 'react-native-sqlite-storage';
-import Mybutton from './components/Mybutton';
+import Otherbutton from './components/Otherbutton';
+import Tabletext from './components/Tabletext';
 
 
 var db = openDatabase({ name: 'SoundNotification.db'});
@@ -45,15 +46,15 @@ const ViewAllSchedules = ({ navigation }) => {
       <View
         key={item.user_id}
         style={{ backgroundColor: 'white', padding: 20 }}>
-        <Text>Id: {item.schedule_id}</Text>
-        <Text>提醒時間: {item.schedule_time}</Text>
-        <Text>描述: {item.description}</Text>
+				<Tabletext text="Id: " subText={item.schedule_id}/>
+				<Tabletext text="提醒時間: " subText={item.schedule_time}/>
+				<Tabletext text="描述: " subText={item.description}/>
         <View style={styles.fixToText}>
-          <Mybutton
+          <Otherbutton
             title="確認已吃藥"
             customClick={() => navigation.navigate('Confirm', {item: item})}
           />
-          <Mybutton
+          <Otherbutton
             title="刪除此提醒"
             customClick={() => navigation.navigate('Delete', {item: item})}
           />

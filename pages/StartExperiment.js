@@ -3,7 +3,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button, Alert, View, Text, SafeAreaView } from 'react-native';
-import Mybutton from './components/Mybutton';
+import Submitbutton from './components/Submitbutton';
+import Icon from './components/Icon';
 import Mytextinput from './components/Mytextinput';
 import { openDatabase } from 'react-native-sqlite-storage';
 
@@ -47,7 +48,10 @@ const StartExperiment = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1 }}>
+				<View style={{ flex: 1, justifyContent: 'center' }}>
+					<Icon
+						imageSource={require('../assets/insurance.png')}
+					/>
 					<Mytextinput
 						placeholder="請輸入實驗起始密碼"
 						onChangeText={
@@ -55,7 +59,7 @@ const StartExperiment = ({ navigation }) => {
 						}
 						style={{ padding: 10 }}
 					/>
-          <Mybutton title="送出" customClick={matchSound} />
+          <Submitbutton title="送出" customClick={matchSound} />
         </View>
         <Text
           style={{

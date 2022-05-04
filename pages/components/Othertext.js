@@ -5,7 +5,7 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-const Mytext = (props) => {
+const Othertext = (props) => {
   return <Text style={styles.text}>{props.text}</Text>;
 };
 
@@ -14,12 +14,9 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
     textAlign: 'center',
     color: '#407d7b',
-    fontSize: 21,
-    marginTop: 16,
-    marginLeft: 35,
-    marginRight: 35,
+    fontSize: 16,
     padding: 10,
   },
 });
 
-export default Mytext;
+export default Othertext;

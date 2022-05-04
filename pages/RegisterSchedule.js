@@ -13,7 +13,9 @@ import {
   Text,
 } from 'react-native';
 import Mytextinput from './components/Mytextinput';
-import Mybutton from './components/Mybutton';
+import Pagebutton from './components/Pagebutton';
+import Submitbutton from './components/Submitbutton';
+import Icon from './components/Icon';
 import { openDatabase } from 'react-native-sqlite-storage';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
@@ -124,14 +126,18 @@ const RegisterSchedule = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1 }}>
-          <ScrollView keyboardShouldPersistTaps="handled">
-            <KeyboardAvoidingView
+				<View style={{ flex: 1, justifyContent: 'center' }}>
+					{/* keyboard avoiding view is for datetime modal don't cover the other items, not sure if put the content in the middle is better, so comment it instead of remove it */}
+					{/*<ScrollView keyboardShouldPersistTaps="handled">
+					<KeyboardAvoidingView
               behavior="padding"
-              style={{ flex: 1, justifyContent: 'space-between' }}>
-              <Button 
-                onPress={showTimePicker}
+              style={{ flex: 1, justifyContent: 'space-between' }}>*/}
+							<Icon
+								imageSource={require('../assets/timer.png')}
+							/>
+              <Pagebutton 
                 title="點擊以選擇時間"
+                customClick={showTimePicker}
               />
               <DateTimePickerModal
                 isVisible={isTimePickerVisible}
@@ -147,9 +153,9 @@ const RegisterSchedule = ({ navigation }) => {
                 }
                 style={{ padding: 10 }}
               />
-              <Mybutton title="新增" customClick={register_schedule} />
-            </KeyboardAvoidingView>
-          </ScrollView>
+              <Submitbutton title="新增" customClick={register_schedule} />
+					{/*</KeyboardAvoidingView>
+          </ScrollView>*/}
         </View>
         <Text
           style={{

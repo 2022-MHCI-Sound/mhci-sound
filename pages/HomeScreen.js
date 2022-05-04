@@ -4,6 +4,7 @@
 import React, { useEffect } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import Mybutton from './components/Mybutton';
+import Icon from './components/Icon';
 import { openDatabase } from 'react-native-sqlite-storage';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
@@ -58,11 +59,15 @@ const HomeScreen = ({ navigation }) => {
 						// insert pswd for each sound song
 						txn.executeSql(
 							'INSERT INTO sounds (sound_pswd, sound_name) VALUES (?,?)',
-							['SNWwp', 'demo1.mp3']
+							['SNWwp', 'facetime.mp3']
 						);
 						txn.executeSql(
 							'INSERT INTO sounds (sound_pswd, sound_name) VALUES (?,?)',
-							['rhC0b', 'demo2.mp3']
+							['rhC0b', 'I_took_a_pill_lbiza.mp3']
+						);
+						txn.executeSql(
+							'INSERT INTO sounds (sound_pswd, sound_name) VALUES (?,?)',
+							['hAkYD', 'sofa_daydream.mp3']
 						);
           }
         }
@@ -73,11 +78,12 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 7, justifyContent: 'center' }}>
-					<Mybutton
-						title="輸入實驗起始密碼"
-						customClick={() => navigation.navigate('Start')}
-					/>
+				<View style={{ flex: 4, justifyContent: 'center' }}>
+					<View style={{ flex: 1, justifyContent: 'center' }}>
+						<Icon
+							imageSource={require('../assets/vitamins.png')}
+						/>
+					</View>
           <Mybutton
             title="新增提醒項目"
             customClick={() => navigation.navigate('Register')}
@@ -86,8 +92,12 @@ const HomeScreen = ({ navigation }) => {
             title="檢視所有提醒項目"
             customClick={() => navigation.navigate('ViewAll')}
           />
-        </View>
-        <View style={{ flex: 1 }}>
+				</View>
+				<View style={{ flex: 2 }}>
+					<Mybutton
+						title="輸入實驗起始密碼"
+						customClick={() => navigation.navigate('Start')}
+					/>
           <Mybutton
               title="結束實驗"
               customClick={() => navigation.navigate('End')}

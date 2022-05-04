@@ -5,7 +5,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const Mybutton = (props) => {
+const Submitbutton = (props) => {
   return (
     <TouchableOpacity
       style={styles.button}
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     padding: 15,
     marginTop: 20,
-    marginLeft: 80,
-    marginRight: 80,
+    marginLeft: 150,
+    marginRight: 150,
 		borderRadius: 10,
   },
   text: {
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Mybutton;
+export default Submitbutton;

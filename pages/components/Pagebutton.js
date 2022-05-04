@@ -5,7 +5,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const Mybutton = (props) => {
+const Pagebutton = (props) => {
   return (
     <TouchableOpacity
       style={styles.button}
@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#6DD0CD',
     color: '#ffffff',
     padding: 15,
-    marginTop: 20,
-    marginLeft: 80,
-    marginRight: 80,
+    marginTop: 25,
+    marginLeft: 35,
+    marginRight: 35,
 		borderRadius: 10,
   },
   text: {
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Mybutton;
+export default Pagebutton;

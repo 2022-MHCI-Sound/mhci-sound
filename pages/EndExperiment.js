@@ -2,8 +2,9 @@
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
 
 import React, { useState, useEffect } from 'react';
-import { Button, Alert, View, Text, SafeAreaView } from 'react-native';
-import Mybutton from './components/Mybutton';
+import { Alert, View, Text, SafeAreaView } from 'react-native';
+import Submitbutton from './components/Submitbutton';
+import Icon from './components/Icon';
 import Mytext from './components/Mytext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import { jsonToCSV } from 'react-native-csv';
@@ -72,15 +73,18 @@ const EndExperiment = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1 }}>
+				<View style={{ flex: 1, justifyContent: 'center' }}>
+					<Icon
+						imageSource={require('../assets/exit_2.png')}
+					/>
           <Mytext text="確定要結束實驗嗎？" />
-          <Button 
-            onPress={handleEmail}
+          <Submitbutton 
+            customClick={handleEmail}
             title="確定唷"
           />
-          <Button
+          <Submitbutton
             title="取消"
-            onPress={() => navigation.navigate('HomeScreen')}
+            customClick={() => navigation.navigate('HomeScreen')}
           />
         </View>
         <Text
