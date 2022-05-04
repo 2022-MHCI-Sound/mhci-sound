@@ -10,7 +10,7 @@ import Mybutton from './components/Mybutton';
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
-const ViewAllSchedules = () => {
+const ViewAllSchedules = ({ navigation }) => {
   let [flatListItems, setFlatListItems] = useState([]);
 
   useEffect(() => {
@@ -50,12 +50,12 @@ const ViewAllSchedules = () => {
         <Text>描述: {item.description}</Text>
         <View style={styles.fixToText}>
           <Mybutton
-            title="確定"
-            customClick={() => Alert.alert('Left button pressed')}
+            title="確認已吃藥"
+            customClick={() => navigation.navigate('Confirm', {item: item})}
           />
           <Mybutton
-            title="刪除"
-            customClick={() => Alert.alert('Right button pressed')}
+            title="刪除此提醒"
+            customClick={() => navigation.navigate('Delete', {item: item})}
           />
         </View>
       </View>
@@ -79,7 +79,7 @@ const ViewAllSchedules = () => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          2022 MHCI
+          2022 DingDongEat
         </Text>
         <Text
           style={{
