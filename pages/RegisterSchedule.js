@@ -157,7 +157,7 @@ const RegisterSchedule = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          2022 MHCI 
+          2022 DingDongEat 
         </Text>
         <Text
           style={{

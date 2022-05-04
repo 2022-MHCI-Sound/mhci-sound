@@ -38,7 +38,7 @@ const App = () => {
           options={{
             title: 'Home', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -52,7 +52,7 @@ const App = () => {
           options={{
             title: 'Start Experiment', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -66,7 +66,7 @@ const App = () => {
           options={{
             title: 'View Schedule', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -80,7 +80,7 @@ const App = () => {
           options={{
             title: 'View Schedules', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -94,7 +94,7 @@ const App = () => {
           options={{
             title: 'Confirm Schedule', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -108,7 +108,7 @@ const App = () => {
           options={{
             title: 'Register Schedule', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -122,7 +122,7 @@ const App = () => {
           options={{
             title: 'Delete Schedule', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -136,7 +136,7 @@ const App = () => {
           options={{
             title: 'End Experiment', //Set Header Title
             headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
+              backgroundColor: '#6DD0CD', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {

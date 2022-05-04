@@ -50,7 +50,7 @@ const EndExperiment = ({ navigation }) => {
         let bodyCsv = `${confirmCsv}\n${scheduleCsv}`
         console.log(bodyCsv);
         Mailer.mail({
-          subject: '2022 MHCI Experiment End',
+          subject: '2022 DingDongEat Experiment End',
           recipients: ['joan.fu@iss.nthu.edu.tw'],
           ccRecipients: ['shelly.chao@iss.nthu.edu.tw'],
           body: bodyCsv,
@@ -89,7 +89,7 @@ const EndExperiment = ({ navigation }) => {
             textAlign: 'center',
             color: 'grey'
           }}>
-          2022 MHCI
+          2022 DingDongEat
         </Text>
         <Text
           style={{

@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 7, justifyContent: 'center' }}>
 					<Mybutton
 						title="輸入實驗起始密碼"
 						customClick={() => navigation.navigate('Start')}
@@ -83,23 +83,11 @@ const HomeScreen = ({ navigation }) => {
             customClick={() => navigation.navigate('Register')}
           />
           <Mybutton
-            title="已於30分鐘內吃藥"
-            customClick={() => navigation.navigate('Confirm')}
-          />
-          <Mybutton
-            title="搜尋"
-            customClick={() => navigation.navigate('View')}
-          />
-          <Mybutton
             title="檢視所有提醒項目"
             customClick={() => navigation.navigate('ViewAll')}
           />
-          <Mybutton
-            title="刪除提醒項目"
-            customClick={() => navigation.navigate('Delete')}
-          />
         </View>
-        <View style={{ flex: 0.15 }}>
+        <View style={{ flex: 1 }}>
           <Mybutton
               title="結束實驗"
               customClick={() => navigation.navigate('End')}

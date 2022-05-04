@@ -2,7 +2,7 @@
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
 // Screen to update the user
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   ScrollView,
@@ -11,70 +11,36 @@ import {
   SafeAreaView,
   Text,
 } from 'react-native';
-import Mytextinput from './components/Mytextinput';
 import Mybutton from './components/Mybutton';
 import { openDatabase } from 'react-native-sqlite-storage';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
-const ConfirmSchedule = ({ navigation }) => {
-  let [inputScheduleId, setInputScheduleId] = useState('');
-  let [scheduleData, setScheduleData] = useState({});
+const DeleteSchedule = ({ route, navigation }) => {
+  const item = route.params['item'];
+  console.log('id:', item['schedule_id'].toString());
 
-  let updateAllStates = (time, description, deleted) => {
-    setScheduleTime(time);
-    setScheduleDescription(description);
-    setDeleted(deleted);
-  };
-
-  let searchSchedule = () => {
-    console.log(inputScheduleId);
-    setScheduleData({});
-    db.transaction((tx) => {
-      tx.executeSql(
-        'SELECT * FROM schedules where schedule_id = ? and deleted != 1',
-        [inputScheduleId],
-        (tx, results) => {
-          var len = results.rows.length;
-          if (len > 0) {
-            let res = results.rows.item(0);
-            // pass schedule data to the showing table
-            setScheduleData(res);
-            updateAllStates(
-              res.schedule_time,
-              res.description,
-              res.deleted
-            );
-          } else {
-            alert('No schedule found');
-            updateAllStates('', '', '');
-          }
-        }
-      );
-    });
-  };
   let deleteSchedule = () => {
-    console.log(inputScheduleId, scheduleData.schedule_time, scheduleData.description, scheduleData.deleted);
-
     // set soft deleted as 1
     let soft_deleted = 1;
 
-    if (!inputScheduleId || Object.keys(scheduleData).length === 0) {
-      alert('請輸入提醒項目id並搜尋成功');
+    if (!item['schedule_id']) {
+      alert('請返回上一頁選擇要刪除的提醒項目');
       return;
     }
-    PushNotificationIOS.removePendingNotificationRequests([inputScheduleId]);
+    PushNotificationIOS.removePendingNotificationRequests([item['schedule_id'].toString()]);
 
     db.transaction((tx) => {
       tx.executeSql(
         'UPDATE schedules set schedule_time=?, description=? , deleted=? where schedule_id=?',
-        [scheduleData.schedule_time, scheduleData.description, soft_deleted, inputScheduleId],
+        [item['schedule_time'], item['description'], soft_deleted, item['schedule_id']],
         (tx, results) => {
           console.log('Results', results.rowsAffected);
           if (results.rowsAffected > 0) {
             Alert.alert(
-              '成功刪除',
+              'Success',
+              'Schedule deleted successfully',
               [
                 {
                   text: 'Ok',
@@ -97,26 +63,16 @@ const ConfirmSchedule = ({ navigation }) => {
             <KeyboardAvoidingView
               behavior="padding"
               style={{ flex: 1, justifyContent: 'space-between' }}>
-              <Mytextinput
-                placeholder="Enter Schedule Id"
-                style={{ padding: 10 }}
-                onChangeText={
-                  (inputScheduleId) => setInputScheduleId(inputScheduleId)
-                }
-              />
-              <Mybutton
-                title="搜尋提醒項目"
-                customClick={searchSchedule} 
-              />
               <View
                 style={{
                 marginLeft: 35,
                 marginRight: 35,
                 marginTop: 10
                 }}>
-                <Text>Schedule Id: {scheduleData.schedule_id}</Text>
-                <Text>Schedule Time: {scheduleData.schedule_time}</Text>
-                <Text>Schedule Description: {scheduleData.description}</Text>
+                <Text style={{ color:'#f05555' }}>您剛剛選擇要刪除的項目為</Text>
+                <Text>項目ID: {item['schedule_id']}</Text>
+                <Text>提醒時間: {item['schedule_time']}</Text>
+                <Text>提醒項目描述: {item['description']}</Text>
               </View>
               <Mybutton
                 title="刪除提醒項目"
@@ -146,4 +102,4 @@ const ConfirmSchedule = ({ navigation }) => {
   );
 };
 
-export default ConfirmSchedule;
+export default DeleteSchedule;
