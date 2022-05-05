@@ -128,34 +128,36 @@ const RegisterSchedule = ({ navigation }) => {
       <View style={{ flex: 1, backgroundColor: 'white' }}>
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					{/* keyboard avoiding view is for datetime modal don't cover the other items, not sure if put the content in the middle is better, so comment it instead of remove it */}
-					{/*<ScrollView keyboardShouldPersistTaps="handled">
+					<ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}>
 					<KeyboardAvoidingView
               behavior="padding"
-              style={{ flex: 1, justifyContent: 'space-between' }}>*/}
-							<Icon
-								imageSource={require('../assets/timer.png')}
-							/>
-              <Pagebutton 
-                title="點擊以選擇時間"
-                customClick={showTimePicker}
-              />
-              <DateTimePickerModal
-                isVisible={isTimePickerVisible}
-                mode="time"
-                onConfirm={handleConfirm}
-                onCancel={hideTimePicker}
-                style={{ padding: 10 }}
-              />
-              <Mytextinput
-                placeholder="請輸入此提醒項目的簡單描述 e.g., 吃益生菌"
-                onChangeText={
-                  (scheduleDescription) => setScheduleDescription(scheduleDescription)
-                }
-                style={{ padding: 10 }}
-              />
-              <Submitbutton title="新增" customClick={register_schedule} />
-					{/*</KeyboardAvoidingView>
-          </ScrollView>*/}
+              style={{ flex: 1, justifyContent: 'space-between' }}>
+                <View style={{ flex:1,justifyContent: 'center' }}>
+                <Icon
+                  imageSource={require('../assets/timer.png')}
+                />
+                <Pagebutton 
+                  title="點擊以選擇時間"
+                  customClick={showTimePicker}
+                />
+                <DateTimePickerModal
+                  isVisible={isTimePickerVisible}
+                  mode="time"
+                  onConfirm={handleConfirm}
+                  onCancel={hideTimePicker}
+                  style={{ padding: 10 }}
+                />
+                <Mytextinput
+                  placeholder="請輸入此提醒項目的簡單描述 e.g., 吃益生菌"
+                  onChangeText={
+                    (scheduleDescription) => setScheduleDescription(scheduleDescription)
+                  }
+                  style={{ padding: 10 }}
+                />
+                <Submitbutton title="新增" customClick={register_schedule} />
+              </View>
+					</KeyboardAvoidingView>
+          </ScrollView>
         </View>
         <Text
           style={{

@@ -12,7 +12,6 @@ import {
   Text,
 } from 'react-native';
 import Mybutton from './components/Mybutton';
-import Mytext from './components/Mytext';
 import Tabletext from './components/Tabletext';
 import Icon from './components/Icon';
 import { openDatabase } from 'react-native-sqlite-storage';
@@ -76,7 +75,6 @@ const DeleteSchedule = ({ route, navigation }) => {
 								<Icon
 									imageSource={require('../assets/trash.png')}
 								/>
-                <Mytext text="您剛剛選擇的項目為"/>
                 <Tabletext text="項目ID: " subText={item['schedule_id']}/>
                 <Tabletext text="提醒時間: " subText={item['schedule_time']}/>
                 <Tabletext text="提醒項目描述: " subText={item['description']}/>
