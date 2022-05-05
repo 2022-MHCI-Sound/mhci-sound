@@ -112,10 +112,9 @@ const RegisterSchedule = ({ navigation }) => {
 		});
 		console.log(soundName);
     // use this format temporary (might need to change to cope with push notification mechanism)
-    let hours = scheduleTime.getHours();
-    let minutes = scheduleTime.getMinutes();
-    let seconds = scheduleTime.getSeconds();
-    let rawTime = `${hours}:${minutes}:${seconds}`;
+		let hours = scheduleTime.getHours();
+    let minutes = String(scheduleTime.getMinutes()).padStart(2, "0");
+    let rawTime = `${hours}:${minutes}`;
     setScheduleTime(rawTime);
 		setPushTime(scheduleTime);
 		hideTimePicker();

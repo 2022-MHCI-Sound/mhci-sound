@@ -12,7 +12,7 @@ const Icon = props => {
 
 const styles = StyleSheet.create({
   image: {
-		resizeMode: 'center',
+		resizeMode: 'contain',
     height: 200,
     width: 200,
   },
