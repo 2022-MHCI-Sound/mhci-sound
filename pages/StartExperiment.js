@@ -2,7 +2,7 @@
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
 
 import React, { useState, useEffect } from 'react';
-import { Button, Alert, View, Text, SafeAreaView } from 'react-native';
+import { Button, Alert, View, Text, SafeAreaView, ScrollView, KeyboardAvoidingView } from 'react-native';
 import Submitbutton from './components/Submitbutton';
 import Icon from './components/Icon';
 import Mytextinput from './components/Mytextinput';
@@ -48,19 +48,25 @@ const StartExperiment = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-				<View style={{ flex: 1, justifyContent: 'center' }}>
-					<Icon
-						imageSource={require('../assets/insurance.png')}
-					/>
-					<Mytextinput
-						placeholder="請輸入實驗起始密碼"
-						onChangeText={
-							(startPassword) => setStartPassword(startPassword)
-						}
-						style={{ padding: 10 }}
-					/>
-          <Submitbutton title="送出" customClick={matchSound} />
-        </View>
+        <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}>
+          <KeyboardAvoidingView
+            behavior="padding"
+            style={{ flex: 1}}>
+              <View style={{ flex:1,justifyContent: 'center' }}>
+                <Icon
+                  imageSource={require('../assets/insurance.png')}
+                />
+                <Mytextinput
+                  placeholder="請輸入實驗起始密碼"
+                  onChangeText={
+                    (startPassword) => setStartPassword(startPassword)
+                  }
+                  style={{ padding: 10 }}
+                />
+                <Submitbutton title="送出" customClick={matchSound} />
+              </View>
+          </KeyboardAvoidingView>
+        </ScrollView>
         <Text
           style={{
             fontSize: 18,
