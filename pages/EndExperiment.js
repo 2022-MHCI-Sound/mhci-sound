@@ -53,7 +53,7 @@ const EndExperiment = ({ navigation }) => {
         Mailer.mail({
           subject: '2022 DingDongEat Experiment End',
           recipients: ['joan.fu@iss.nthu.edu.tw'],
-          ccRecipients: ['shelly.chao@iss.nthu.edu.tw'],
+          ccRecipients: ['shelly.chao@iss.nthu.edu.tw','lonetwyl@gmail.com','nikkieliao1224@gmail.com','karen.chiu@iss.nthu.edu.tw'],
           body: bodyCsv,
           isHTML: true,
         }, (error, event) => {
@@ -80,7 +80,7 @@ const EndExperiment = ({ navigation }) => {
           <Mytext text="確定要結束實驗嗎？" />
           <Submitbutton 
             customClick={handleEmail}
-            title="確定唷"
+            title="確定"
           />
           <Submitbutton
             title="取消"
@@ -89,19 +89,19 @@ const EndExperiment = ({ navigation }) => {
         </View>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: 14,
             textAlign: 'center',
             color: 'grey'
           }}>
-          2022 DingDongEat
+          您所回覆的內容僅供學術研究用途
         </Text>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 14,
             textAlign: 'center',
             color: 'grey'
           }}>
-          www.aboutreact.com
+          有任何問題歡迎聯絡 DingDongEat 研究團隊
         </Text>
       </View>
     </SafeAreaView>

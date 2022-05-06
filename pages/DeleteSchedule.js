@@ -94,14 +94,6 @@ const DeleteSchedule = ({ route, navigation }) => {
           }}>
           2022 DingDongEat
         </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          www.aboutreact.com
-        </Text>
       </View>
     </SafeAreaView>
   );

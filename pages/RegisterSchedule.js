@@ -52,11 +52,11 @@ const RegisterSchedule = ({ navigation }) => {
             addNotification(results.insertId, soundName.sound_name);
             Alert.alert(
               'Success',
-              'You are Registered Successfully',
+              '成功新增提醒',
               [
                 {
                   text: 'Ok',
-                  onPress: () => navigation.navigate('HomeScreen'),
+                  onPress: () => navigation.navigate('ViewAll'),
                 },
               ],
               { cancelable: false }
@@ -165,14 +165,6 @@ const RegisterSchedule = ({ navigation }) => {
             color: 'grey'
           }}>
           2022 DingDongEat 
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          www.aboutreact.com
         </Text>
       </View>
     </SafeAreaView>
