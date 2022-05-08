@@ -13,9 +13,11 @@ import {
   Text,
 } from 'react-native';
 import Mytextinput from './components/Mytextinput';
+import Mytext from './components/Mytext';
 import Pagebutton from './components/Pagebutton';
 import Submitbutton from './components/Submitbutton';
 import Icon from './components/Icon';
+import Logotext from './components/Logotext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
@@ -26,7 +28,7 @@ var db = openDatabase({ name: 'SoundNotification.db'});
 const RegisterSchedule = ({ navigation }) => {
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
   let [PushTime, setPushTime] = useState('');
-  let [scheduleTime, setScheduleTime] = useState('');
+	let [scheduleTime, setScheduleTime] = useState('--:--');
   let [scheduleDescription, setScheduleDescription] = useState('');
   let [soundName, setSoundName] = useState('');
 
@@ -52,8 +54,8 @@ const RegisterSchedule = ({ navigation }) => {
             addNotification(results.insertId, soundName.sound_name);
             Alert.alert(
               'Success',
-              '成功新增提醒',
-              [
+              '此設定為重複性提醒',
+							[
                 {
                   text: 'Ok',
                   onPress: () => navigation.navigate('ViewAll'),
@@ -135,6 +137,7 @@ const RegisterSchedule = ({ navigation }) => {
                 <Icon
                   imageSource={require('../assets/timer.png')}
                 />
+								<Mytext text={`您選擇的時間為: ${scheduleTime}`}/>
                 <Pagebutton 
                   title="點擊以選擇時間"
                   customClick={showTimePicker}
@@ -158,14 +161,7 @@ const RegisterSchedule = ({ navigation }) => {
 					</KeyboardAvoidingView>
           </ScrollView>
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 DingDongEat 
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );

@@ -14,6 +14,7 @@ import {
 import Mybutton from './components/Mybutton';
 import Tabletext from './components/Tabletext';
 import Icon from './components/Icon';
+import Logotext from './components/Logotext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
@@ -86,14 +87,7 @@ const DeleteSchedule = ({ route, navigation }) => {
 					{/*</KeyboardAvoidingView>
           </ScrollView>*/}
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 DingDongEat
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );

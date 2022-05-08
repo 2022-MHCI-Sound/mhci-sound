@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import Mybutton from './components/Mybutton';
 import Icon from './components/Icon';
+import Logotext from './components/Logotext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
@@ -103,14 +104,7 @@ const HomeScreen = ({ navigation }) => {
               customClick={() => navigation.navigate('End')}
           />
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 DingDongEat
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );

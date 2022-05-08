@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import { openDatabase } from 'react-native-sqlite-storage';
+import Logotext from './components/Logotext';
 import Otherbutton from './components/Otherbutton';
 import Tabletext from './components/Tabletext';
 
@@ -74,14 +75,7 @@ const ViewAllSchedules = ({ navigation }) => {
             renderItem={({ item }) => listItemView(item)}
           />
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 DingDongEat
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );

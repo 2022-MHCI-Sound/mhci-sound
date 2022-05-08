@@ -15,6 +15,7 @@ import Mybutton from './components/Mybutton';
 import Othertext from './components/Othertext';
 import Mytext from './components/Mytext';
 import Tabletext from './components/Tabletext';
+import Logotext from './components/Logotext';
 import Icon from './components/Icon';
 import { openDatabase } from 'react-native-sqlite-storage';
 
@@ -91,14 +92,7 @@ const ConfirmSchedule = ({ route, navigation }) => {
 					{/*</KeyboardAvoidingView>
 					</ScrollView>*/}
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 DingDongEat
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );

@@ -2,9 +2,11 @@
 // https://aboutreact.com/example-of-sqlite-database-in-react-native
 
 import React, { useState, useEffect } from 'react';
-import { Alert, View, Text, SafeAreaView } from 'react-native';
-import Submitbutton from './components/Submitbutton';
+import { Alert, View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import EndLeftbutton from './components/EndLeftbutton';
+import EndRightbutton from './components/EndRightbutton';
 import Icon from './components/Icon';
+import Logotext from './components/Logotext';
 import Mytext from './components/Mytext';
 import { openDatabase } from 'react-native-sqlite-storage';
 import { jsonToCSV } from 'react-native-csv';
@@ -78,34 +80,37 @@ const EndExperiment = ({ navigation }) => {
 						imageSource={require('../assets/exit_2.png')}
 					/>
           <Mytext text="確定要結束實驗嗎？" />
-          <Submitbutton 
-            customClick={handleEmail}
-            title="確定"
-          />
-          <Submitbutton
-            title="取消"
-            customClick={() => navigation.navigate('HomeScreen')}
-          />
+					<View style={styles.fixToText}>
+						<EndLeftbutton 
+							customClick={handleEmail}
+							title="確定"
+						/>
+						<EndRightbutton
+							title="取消"
+							customClick={() => navigation.navigate('HomeScreen')}
+						/>
+					</View>
         </View>
         <Text
           style={{
-            fontSize: 14,
+            fontSize: 12,
             textAlign: 'center',
-            color: 'grey'
+            color: 'grey',
+						marginBottom: 5
           }}>
           您所回覆的內容僅供學術研究用途
         </Text>
-        <Text
-          style={{
-            fontSize: 14,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          有任何問題歡迎聯絡 DingDongEat 研究團隊
-        </Text>
+				<Logotext text="有任何問題歡迎聯絡 DingDongEat 研究團隊"/>
       </View>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
+});
 
 export default EndExperiment;
