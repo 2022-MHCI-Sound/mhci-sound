@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Alert, View, Text, SafeAreaView, ScrollView, KeyboardAvoidingView } from 'react-native';
 import Submitbutton from './components/Submitbutton';
 import Icon from './components/Icon';
+import Logotext from './components/Logotext';
 import Mytextinput from './components/Mytextinput';
 import { openDatabase } from 'react-native-sqlite-storage';
 
@@ -67,14 +68,7 @@ const StartExperiment = ({ navigation }) => {
               </View>
           </KeyboardAvoidingView>
         </ScrollView>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 DingDongEat
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );
