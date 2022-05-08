@@ -125,7 +125,7 @@ const RegisterSchedule = ({ navigation }) => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					{/* keyboard avoiding view is for datetime modal don't cover the other items, not sure if put the content in the middle is better, so comment it instead of remove it */}

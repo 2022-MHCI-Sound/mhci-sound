@@ -43,12 +43,10 @@ const EndExperiment = ({ navigation }) => {
             );
           });
       }, []);
-    //   console.log(allScheduleData);
-    //   console.log(allConfirmData);
+
       const scheduleCsv = jsonToCSV(allScheduleData)
       const confirmCsv = jsonToCSV(allConfirmData)
-    //   setAllScheduleData(scheduleCsv);
-    //   setAllConfirmData(confirmCsv);
+
     const handleEmail = () => {
         let bodyCsv = `${confirmCsv}\n${scheduleCsv}`
         console.log(bodyCsv);
@@ -73,7 +71,7 @@ const EndExperiment = ({ navigation }) => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					<Icon

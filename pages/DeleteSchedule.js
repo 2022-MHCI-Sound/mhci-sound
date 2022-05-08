@@ -59,7 +59,7 @@ const DeleteSchedule = ({ route, navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					{/*<ScrollView keyboardShouldPersistTaps="handled">
@@ -72,7 +72,7 @@ const DeleteSchedule = ({ route, navigation }) => {
                 marginRight: 35,
                 marginTop: 10
                 }}>
-								<Text style={{padding: 10, textAlign: 'center',color:'#f05555', fontSize: 24, fontWeight: 'bold'}}>您剛剛選擇要刪除的項目為</Text>
+								<Text style={{padding: 10, textAlign: 'center',color:'#f05555', fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>您剛剛選擇要刪除的項目為</Text>
 								<Icon
 									imageSource={require('../assets/trash.png')}
 								/>

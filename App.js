@@ -106,7 +106,7 @@ const App = () => {
           name="Register"
           component={RegisterSchedule}
           options={{
-            title: 'Register Schedule', //Set Header Title
+            title: 'New Schedule', //Set Header Title
             headerStyle: {
               backgroundColor: '#6DD0CD', //Set Header color
             },

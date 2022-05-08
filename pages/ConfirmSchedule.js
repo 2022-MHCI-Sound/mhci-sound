@@ -62,7 +62,7 @@ const ConfirmSchedule = ({ route, navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					{/*<ScrollView keyboardShouldPersistTaps="handled">
