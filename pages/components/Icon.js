@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const Icon = props => {
-    console.log(props);
     return (
       <View style={styles.image_container}>
         <Image source={props.imageSource} style={styles.image}/>
