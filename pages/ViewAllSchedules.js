@@ -52,7 +52,7 @@ const ViewAllSchedules = ({ navigation }) => {
 				<Tabletext text="描述: " subText={item.description}/>
         <View style={styles.fixToText}>
           <Otherbutton
-            title="確認已吃藥"
+            title="今日吃藥情形"
             customClick={() => navigation.navigate('Confirm', {item: item})}
           />
           <Otherbutton
