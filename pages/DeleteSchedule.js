@@ -33,6 +33,7 @@ const DeleteSchedule = ({ route, navigation }) => {
       return;
     }
     PushNotificationIOS.removePendingNotificationRequests([item['schedule_id'].toString()]);
+    PushNotificationIOS.removePendingNotificationRequests([`30_${item['schedule_id'].toString()}`]);
 
     db.transaction((tx) => {
       tx.executeSql(

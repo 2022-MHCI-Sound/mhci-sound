@@ -26,7 +26,7 @@ const HomeScreen = ({ navigation }) => {
           if (res.rows.length == 0) {
             txn.executeSql('DROP TABLE IF EXISTS schedules', []);
             txn.executeSql(
-              'CREATE TABLE IF NOT EXISTS schedules(schedule_id INTEGER PRIMARY KEY AUTOINCREMENT, schedule_time DATETIME, description TEXT, confirmed INTEGER DEFAULT 0 NOT NULL, deleted INTEGER DEFAULT 0 NOT NULL, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, UNIQUE(schedule_time, description) )',
+              'CREATE TABLE IF NOT EXISTS schedules(schedule_id INTEGER PRIMARY KEY AUTOINCREMENT, schedule_time DATETIME, description TEXT, confirmed INTEGER DEFAULT 0 NOT NULL, not_eat INTEGER DEFAULT 0 NOT NULL, deleted INTEGER DEFAULT 0 NOT NULL, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, UNIQUE(schedule_time, description) )',
               []
             );
           }
@@ -40,7 +40,7 @@ const HomeScreen = ({ navigation }) => {
           if (res.rows.length == 0) {
             txn.executeSql('DROP TABLE IF EXISTS confirms', []);
             txn.executeSql(
-              'CREATE TABLE IF NOT EXISTS confirms(confirm_id INTEGER PRIMARY KEY AUTOINCREMENT,schedule_id INTEGER UNSIGNED NOT NULL, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (schedule_id) REFERENCES schedules (schedule_id) )',
+              'CREATE TABLE IF NOT EXISTS confirms(confirm_id INTEGER PRIMARY KEY AUTOINCREMENT,schedule_id INTEGER UNSIGNED NOT NULL, description TEXT, created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (schedule_id) REFERENCES schedules (schedule_id) )',
               []
             );
           }
@@ -86,18 +86,18 @@ const HomeScreen = ({ navigation }) => {
 						/>
 					</View>
           <Mybutton
-            title="新增提醒項目"
-            customClick={() => navigation.navigate('Register')}
+            title="輸入實驗起始密碼"
+            customClick={() => navigation.navigate('Start')}
           />
           <Mybutton
-            title="檢視所有提醒項目"
-            customClick={() => navigation.navigate('ViewAll')}
+            title="新增提醒項目"
+            customClick={() => navigation.navigate('Register')}
           />
 				</View>
 				<View style={{ flex: 2 }}>
 					<Mybutton
-						title="輸入實驗起始密碼"
-						customClick={() => navigation.navigate('Start')}
+						title="檢視所有提醒項目"
+						customClick={() => navigation.navigate('ViewAll')}
 					/>
           <Mybutton
               title="結束實驗"

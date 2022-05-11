@@ -28,6 +28,7 @@ var db = openDatabase({ name: 'SoundNotification.db'});
 const RegisterSchedule = ({ navigation }) => {
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
   let [PushTime, setPushTime] = useState('');
+  let [PushLaterTime, setPushLaterTime] = useState('');
 	let [scheduleTime, setScheduleTime] = useState('--:--');
   let [scheduleDescription, setScheduleDescription] = useState('');
   let [soundName, setSoundName] = useState('');
@@ -85,6 +86,20 @@ const RegisterSchedule = ({ navigation }) => {
         minute: true,
       },
     });
+    PushNotificationIOS.addNotificationRequest({
+      id: `30_${id.toString()}`,
+      title: scheduleDescription,
+      body: '貼心提醒，記得至DingdongEat回報今日的吃藥情形唷~ 若已回報請忽略：）',
+      category: 'pill',
+      threadId: id.toString(),
+      fireDate: PushLaterTime,
+      repeats: true,
+      sound: 'default',
+      repeatsComponent: {
+        hour: true,
+        minute: true,
+      },
+    });
   };
 
   const showTimePicker = () => {
@@ -117,8 +132,10 @@ const RegisterSchedule = ({ navigation }) => {
 		let hours = scheduleTime.getHours();
     let minutes = String(scheduleTime.getMinutes()).padStart(2, "0");
     let rawTime = `${hours}:${minutes}`;
+    let laterDate = new Date(scheduleTime.getTime() + 25*60000);
     setScheduleTime(rawTime);
 		setPushTime(scheduleTime);
+    setPushLaterTime(laterDate);
 		hideTimePicker();
   };
 
