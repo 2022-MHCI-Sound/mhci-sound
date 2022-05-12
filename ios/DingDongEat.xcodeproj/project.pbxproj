@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MHCISoundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MHCISoundTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-MHCISound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MHCISound.a */; };
+		06446A764F888343F38FC49E /* libPods-DingDongEat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF76317EAA9C3415491CF2E /* libPods-DingDongEat.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-MHCISound-MHCISoundTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MHCISound-MHCISoundTests.a */; };
+		61BB90FD282CA17300563EE1 /* facetime_lyrics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BB90FC282CA17300563EE1 /* facetime_lyrics.mp3 */; };
+		61BB90FF282CA17E00563EE1 /* facetime_instrumental.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BB90FE282CA17E00563EE1 /* facetime_instrumental.mp3 */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A93B6EC1863B59AF92D6DD98 /* libPods-DingDongEat-DingDongEatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA11C87E18F3DF8669E985A5 /* libPods-DingDongEat-DingDongEatTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,22 +29,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* MHCISoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHCISoundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* DingDongEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DingDongEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MHCISoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHCISoundTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* MHCISound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHCISound.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* DingDongEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DingDongEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MHCISound/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MHCISound/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MHCISound/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MHCISound/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MHCISound/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-MHCISound-MHCISoundTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHCISound-MHCISoundTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F32EEE4281FD1D700F3F0CE /* MHCISound.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MHCISound.entitlements; path = MHCISound/MHCISound.entitlements; sourceTree = "<group>"; };
+		359D5DD980474439A871D2F6 /* Pods-DingDongEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingDongEat.release.xcconfig"; path = "Target Support Files/Pods-DingDongEat/Pods-DingDongEat.release.xcconfig"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-MHCISound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound.debug.xcconfig"; path = "Target Support Files/Pods-MHCISound/Pods-MHCISound.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-MHCISound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound.release.xcconfig"; path = "Target Support Files/Pods-MHCISound/Pods-MHCISound.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-MHCISound-MHCISoundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound-MHCISoundTests.debug.xcconfig"; path = "Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-MHCISound.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHCISound.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61BB90FC282CA17300563EE1 /* facetime_lyrics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = facetime_lyrics.mp3; sourceTree = "<group>"; };
+		61BB90FE282CA17E00563EE1 /* facetime_instrumental.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = facetime_instrumental.mp3; sourceTree = "<group>"; };
+		6BF76317EAA9C3415491CF2E /* libPods-DingDongEat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DingDongEat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MHCISound/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MHCISound-MHCISoundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound-MHCISoundTests.release.xcconfig"; path = "Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA030AEF72FB2FBAD5F3FF2E /* Pods-DingDongEat-DingDongEatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingDongEat-DingDongEatTests.debug.xcconfig"; path = "Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4F9193D7AA633A88CC38A2D /* Pods-DingDongEat-DingDongEatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingDongEat-DingDongEatTests.release.xcconfig"; path = "Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD8D8B5DF843E27EF1BFF5F3 /* Pods-DingDongEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingDongEat.debug.xcconfig"; path = "Target Support Files/Pods-DingDongEat/Pods-DingDongEat.debug.xcconfig"; sourceTree = "<group>"; };
+		DA11C87E18F3DF8669E985A5 /* libPods-DingDongEat-DingDongEatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DingDongEat-DingDongEatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-MHCISound-MHCISoundTests.a in Frameworks */,
+				A93B6EC1863B59AF92D6DD98 /* libPods-DingDongEat-DingDongEatTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-MHCISound.a in Frameworks */,
+				06446A764F888343F38FC49E /* libPods-DingDongEat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +95,7 @@
 		13B07FAE1A68108700A75B9A /* MHCISound */ = {
 			isa = PBXGroup;
 			children = (
+				2F32EEE4281FD1D700F3F0CE /* MHCISound.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -100,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-MHCISound.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-MHCISound-MHCISoundTests.a */,
+				6BF76317EAA9C3415491CF2E /* libPods-DingDongEat.a */,
+				DA11C87E18F3DF8669E985A5 /* libPods-DingDongEat-DingDongEatTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +126,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				61BB90FC282CA17300563EE1 /* facetime_lyrics.mp3 */,
+				61BB90FE282CA17E00563EE1 /* facetime_instrumental.mp3 */,
 				13B07FAE1A68108700A75B9A /* MHCISound */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MHCISoundTests */,
@@ -131,8 +143,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* MHCISound.app */,
-				00E356EE1AD99517003FC87E /* MHCISoundTests.xctest */,
+				13B07F961A680F5B00A75B9A /* DingDongEat.app */,
+				00E356EE1AD99517003FC87E /* DingDongEatTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +156,10 @@
 				5709B34CF0A7D63546082F79 /* Pods-MHCISound.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-MHCISound-MHCISoundTests.debug.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-MHCISound-MHCISoundTests.release.xcconfig */,
+				CD8D8B5DF843E27EF1BFF5F3 /* Pods-DingDongEat.debug.xcconfig */,
+				359D5DD980474439A871D2F6 /* Pods-DingDongEat.release.xcconfig */,
+				BA030AEF72FB2FBAD5F3FF2E /* Pods-DingDongEat-DingDongEatTests.debug.xcconfig */,
+				C4F9193D7AA633A88CC38A2D /* Pods-DingDongEat-DingDongEatTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -151,9 +167,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* MHCISoundTests */ = {
+		00E356ED1AD99517003FC87E /* DingDongEatTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MHCISoundTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DingDongEatTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -167,14 +183,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = MHCISoundTests;
+			name = DingDongEatTests;
 			productName = MHCISoundTests;
-			productReference = 00E356EE1AD99517003FC87E /* MHCISoundTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* DingDongEatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* MHCISound */ = {
+		13B07F861A680F5B00A75B9A /* DingDongEat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MHCISound" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DingDongEat" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -189,9 +205,9 @@
 			);
 			dependencies = (
 			);
-			name = MHCISound;
+			name = DingDongEat;
 			productName = MHCISound;
-			productReference = 13B07F961A680F5B00A75B9A /* MHCISound.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* DingDongEat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "MHCISound" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DingDongEat" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,8 +240,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* MHCISound */,
-				00E356ED1AD99517003FC87E /* MHCISoundTests */,
+				13B07F861A680F5B00A75B9A /* DingDongEat */,
+				00E356ED1AD99517003FC87E /* DingDongEatTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				61BB90FF282CA17E00563EE1 /* facetime_instrumental.mp3 in Resources */,
+				61BB90FD282CA17300563EE1 /* facetime_lyrics.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,15 +288,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound/Pods-MHCISound-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat/Pods-DingDongEat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound/Pods-MHCISound-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat/Pods-DingDongEat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MHCISound/Pods-MHCISound-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DingDongEat/Pods-DingDongEat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -296,7 +314,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MHCISound-MHCISoundTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DingDongEat-DingDongEatTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -318,7 +336,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MHCISound-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DingDongEat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,15 +349,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -348,15 +366,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound/Pods-MHCISound-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat/Pods-DingDongEat-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound/Pods-MHCISound-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat/Pods-DingDongEat-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MHCISound/Pods-MHCISound-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DingDongEat/Pods-DingDongEat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -365,15 +383,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DingDongEat-DingDongEatTests/Pods-DingDongEat-DingDongEatTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -420,7 +438,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* MHCISound */;
+			target = 13B07F861A680F5B00A75B9A /* DingDongEat */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,7 +446,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-MHCISound-MHCISoundTests.debug.xcconfig */;
+			baseConfigurationReference = BA030AEF72FB2FBAD5F3FF2E /* Pods-DingDongEat-DingDongEatTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -449,13 +467,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHCISound.app/MHCISound";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DingDongEat.app/DingDongEat";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-MHCISound-MHCISoundTests.release.xcconfig */;
+			baseConfigurationReference = C4F9193D7AA633A88CC38A2D /* Pods-DingDongEat-DingDongEatTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -473,19 +491,24 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHCISound.app/MHCISound";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DingDongEat.app/DingDongEat";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-MHCISound.debug.xcconfig */;
+			baseConfigurationReference = CD8D8B5DF843E27EF1BFF5F3 /* Pods-DingDongEat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MHCISound/MHCISound.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4KHD48B8DT;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MHCISound/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,8 +518,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = MHCISound;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dingdongeat;
+				PRODUCT_NAME = DingDongEat;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -505,12 +529,17 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-MHCISound.release.xcconfig */;
+			baseConfigurationReference = 359D5DD980474439A871D2F6 /* Pods-DingDongEat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MHCISound/MHCISound.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4KHD48B8DT;
 				INFOPLIST_FILE = MHCISound/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,8 +549,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = MHCISound;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dingdongeat;
+				PRODUCT_NAME = DingDongEat;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -576,7 +606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -640,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -665,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MHCISoundTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DingDongEatTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -674,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MHCISound" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DingDongEat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -683,7 +713,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "MHCISound" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DingDongEat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

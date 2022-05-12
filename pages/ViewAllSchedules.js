@@ -5,12 +5,14 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import { openDatabase } from 'react-native-sqlite-storage';
-import Mybutton from './components/Mybutton';
+import Logotext from './components/Logotext';
+import Otherbutton from './components/Otherbutton';
+import Tabletext from './components/Tabletext';
 
 
 var db = openDatabase({ name: 'SoundNotification.db'});
 
-const ViewAllSchedules = () => {
+const ViewAllSchedules = ({ navigation }) => {
   let [flatListItems, setFlatListItems] = useState([]);
 
   useEffect(() => {
@@ -45,17 +47,17 @@ const ViewAllSchedules = () => {
       <View
         key={item.user_id}
         style={{ backgroundColor: 'white', padding: 20 }}>
-        <Text>Id: {item.schedule_id}</Text>
-        <Text>Time: {item.schedule_time}</Text>
-        <Text>Description: {item.description}</Text>
+				<Tabletext text="Id: " subText={item.schedule_id}/>
+				<Tabletext text="提醒時間: " subText={item.schedule_time}/>
+				<Tabletext text="描述: " subText={item.description}/>
         <View style={styles.fixToText}>
-          <Mybutton
-            title="Confirm"
-            customClick={() => Alert.alert('Left button pressed')}
+          <Otherbutton
+            title="今日吃藥情形"
+            customClick={() => navigation.navigate('Confirm', {item: item})}
           />
-          <Mybutton
-            title="Delete"
-            customClick={() => Alert.alert('Right button pressed')}
+          <Otherbutton
+            title="刪除此提醒"
+            customClick={() => navigation.navigate('Delete', {item: item})}
           />
         </View>
       </View>
@@ -63,7 +65,7 @@ const ViewAllSchedules = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <View style={{ flex: 1 }}>
           <FlatList
@@ -73,22 +75,7 @@ const ViewAllSchedules = () => {
             renderItem={({ item }) => listItemView(item)}
           />
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          2022 MHCI
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          www.aboutreact.com
-        </Text>
+				<Logotext text="2022 DingDongEat"/> 
       </View>
     </SafeAreaView>
   );

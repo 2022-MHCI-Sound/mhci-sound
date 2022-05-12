@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "MHCISound.app"
-               BlueprintName = "MHCISound"
-               ReferencedContainer = "container:MHCISound.xcodeproj">
+               BuildableName = "DingDongEat.app"
+               BlueprintName = "DingDongEat"
+               ReferencedContainer = "container:DingDongEat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "MHCISoundTests.xctest"
-               BlueprintName = "MHCISoundTests"
-               ReferencedContainer = "container:MHCISound.xcodeproj">
+               BuildableName = "DingDongEatTests.xctest"
+               BlueprintName = "DingDongEatTests"
+               ReferencedContainer = "container:DingDongEat.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MHCISound.app"
-            BlueprintName = "MHCISound"
-            ReferencedContainer = "container:MHCISound.xcodeproj">
+            BuildableName = "DingDongEat.app"
+            BlueprintName = "DingDongEat"
+            ReferencedContainer = "container:DingDongEat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MHCISound.app"
-            BlueprintName = "MHCISound"
-            ReferencedContainer = "container:MHCISound.xcodeproj">
+            BuildableName = "DingDongEat.app"
+            BlueprintName = "DingDongEat"
+            ReferencedContainer = "container:DingDongEat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

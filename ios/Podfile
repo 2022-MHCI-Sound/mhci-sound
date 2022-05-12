@@ -4,7 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '11.0'
 install! 'cocoapods', :deterministic_uuids => false
 
-target 'MHCISound' do
+target 'DingDongEat' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -19,11 +19,9 @@ target 'MHCISound' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  pod 'react-native-date-picker', :path => '../node_modules/react-native-date-picker'
 
-  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
 
-  target 'MHCISoundTests' do
+  target 'DingDongEatTests' do
     inherit! :complete
     # Pods for testing
   end

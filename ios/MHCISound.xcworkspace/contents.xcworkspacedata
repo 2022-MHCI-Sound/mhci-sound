@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MHCISound.xcodeproj">
+      location = "group:/Users/hsiang-chenchao/Desktop/about/iss/&#x591a;&#x611f;&#x5b98;/Sound/Final/develop/mhci-sound/ios/DingDongEat.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
