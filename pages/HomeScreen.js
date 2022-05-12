@@ -60,15 +60,11 @@ const HomeScreen = ({ navigation }) => {
 						// insert pswd for each sound song
 						txn.executeSql(
 							'INSERT INTO sounds (sound_pswd, sound_name) VALUES (?,?)',
-							['SNWwp', 'facetime.mp3']
+							['SNWwp', 'facetime_lyrics.mp3']
 						);
 						txn.executeSql(
 							'INSERT INTO sounds (sound_pswd, sound_name) VALUES (?,?)',
-							['rhC0b', 'I_took_a_pill_lbiza.mp3']
-						);
-						txn.executeSql(
-							'INSERT INTO sounds (sound_pswd, sound_name) VALUES (?,?)',
-							['hAkYD', 'sofa_daydream.mp3']
+							['rhC0b', 'facetime_instrumental.mp3']
 						);
           }
         }

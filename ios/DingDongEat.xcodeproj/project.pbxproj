@@ -12,9 +12,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2F32EEEA2823AA5400F3F0CE /* I_took_a_pill_lbiza.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F32EEE92823AA5400F3F0CE /* I_took_a_pill_lbiza.mp3 */; };
-		61A2DE0D2822AB0400E4E01D /* facetime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61A2DE0A2822AB0400E4E01D /* facetime.mp3 */; };
-		61A2DE0E2822AB0400E4E01D /* sofa_daydream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61A2DE0B2822AB0400E4E01D /* sofa_daydream.mp3 */; };
+		61BB90FD282CA17300563EE1 /* facetime_lyrics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BB90FC282CA17300563EE1 /* facetime_lyrics.mp3 */; };
+		61BB90FF282CA17E00563EE1 /* facetime_instrumental.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BB90FE282CA17E00563EE1 /* facetime_instrumental.mp3 */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A93B6EC1863B59AF92D6DD98 /* libPods-DingDongEat-DingDongEatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA11C87E18F3DF8669E985A5 /* libPods-DingDongEat-DingDongEatTests.a */; };
 /* End PBXBuildFile section */
@@ -40,13 +39,12 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MHCISound/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MHCISound/main.m; sourceTree = "<group>"; };
 		2F32EEE4281FD1D700F3F0CE /* MHCISound.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MHCISound.entitlements; path = MHCISound/MHCISound.entitlements; sourceTree = "<group>"; };
-		2F32EEE92823AA5400F3F0CE /* I_took_a_pill_lbiza.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = I_took_a_pill_lbiza.mp3; sourceTree = "<group>"; };
 		359D5DD980474439A871D2F6 /* Pods-DingDongEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DingDongEat.release.xcconfig"; path = "Target Support Files/Pods-DingDongEat/Pods-DingDongEat.release.xcconfig"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-MHCISound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound.debug.xcconfig"; path = "Target Support Files/Pods-MHCISound/Pods-MHCISound.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-MHCISound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound.release.xcconfig"; path = "Target Support Files/Pods-MHCISound/Pods-MHCISound.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-MHCISound-MHCISoundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound-MHCISoundTests.debug.xcconfig"; path = "Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests.debug.xcconfig"; sourceTree = "<group>"; };
-		61A2DE0A2822AB0400E4E01D /* facetime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = facetime.mp3; sourceTree = "<group>"; };
-		61A2DE0B2822AB0400E4E01D /* sofa_daydream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sofa_daydream.mp3; sourceTree = "<group>"; };
+		61BB90FC282CA17300563EE1 /* facetime_lyrics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = facetime_lyrics.mp3; sourceTree = "<group>"; };
+		61BB90FE282CA17E00563EE1 /* facetime_instrumental.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = facetime_instrumental.mp3; sourceTree = "<group>"; };
 		6BF76317EAA9C3415491CF2E /* libPods-DingDongEat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DingDongEat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MHCISound/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MHCISound-MHCISoundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHCISound-MHCISoundTests.release.xcconfig"; path = "Target Support Files/Pods-MHCISound-MHCISoundTests/Pods-MHCISound-MHCISoundTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,9 +126,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				2F32EEE92823AA5400F3F0CE /* I_took_a_pill_lbiza.mp3 */,
-				61A2DE0A2822AB0400E4E01D /* facetime.mp3 */,
-				61A2DE0B2822AB0400E4E01D /* sofa_daydream.mp3 */,
+				61BB90FC282CA17300563EE1 /* facetime_lyrics.mp3 */,
+				61BB90FE282CA17E00563EE1 /* facetime_instrumental.mp3 */,
 				13B07FAE1A68108700A75B9A /* MHCISound */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MHCISoundTests */,
@@ -263,9 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2F32EEEA2823AA5400F3F0CE /* I_took_a_pill_lbiza.mp3 in Resources */,
-				61A2DE0E2822AB0400E4E01D /* sofa_daydream.mp3 in Resources */,
-				61A2DE0D2822AB0400E4E01D /* facetime.mp3 in Resources */,
+				61BB90FF282CA17E00563EE1 /* facetime_instrumental.mp3 in Resources */,
+				61BB90FD282CA17300563EE1 /* facetime_lyrics.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +505,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2WQYPKFU3D;
+				DEVELOPMENT_TEAM = 4KHD48B8DT;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MHCISound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
@@ -522,7 +518,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DingDongEat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dingdongeat;
 				PRODUCT_NAME = DingDongEat;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -541,7 +537,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2WQYPKFU3D;
+				DEVELOPMENT_TEAM = 4KHD48B8DT;
 				INFOPLIST_FILE = MHCISound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -553,7 +549,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DingDongEat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dingdongeat;
 				PRODUCT_NAME = DingDongEat;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
